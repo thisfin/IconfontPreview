@@ -91,8 +91,8 @@ class FileSelectedViewController: NSViewController, NSTextFieldDelegate {
     override func viewDidAppear() {
         super.viewWillAppear()
 
-        ttfTextField.stringValue = "a"
-        cssTextField.stringValue = "b"
+        ttfTextField.stringValue = "/Users/wenyou/Desktop/font_p9brfmgxs1qbyb9/iconfont.ttf"
+        cssTextField.stringValue = "/Users/wenyou/Desktop/font_p9brfmgxs1qbyb9/iconfont.css"
         setSubmitButtonStatus()
     }
 
@@ -134,7 +134,7 @@ class FileSelectedViewController: NSViewController, NSTextFieldDelegate {
     }
 
     func submitButtonClicked(_ sender: NSButton) { // 下一步
-        if fileCheck("ttf") && fileCheck("css") {
+        if fileCheck("ttf") && fileCheck("css") && IconTool.sharedInstance.registFont(ttfTextField.stringValue) {
             if let eventAction = nextWindowAction {
                 eventAction(ttfTextField.stringValue, cssTextField.stringValue)
             }

@@ -16,7 +16,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         window = NSWindow()
         window.styleMask = [.closable, .miniaturizable, .titled]
-        window.contentViewController = ViewController()
 //        window.center()
 //        window.makeKeyAndOrderFront(self)
 
@@ -25,6 +24,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         fileSelectedWindew.contentViewController = {
             let controller = FileSelectedViewController()
             controller.nextWindowAction = {(ttfFilePath, cssFilePath) in
+                self.window.contentViewController = {
+                    let fontController = ViewController()
+                    fontController.cssFilePath = cssFilePath
+                    return fontController
+                }()
                 self.window.center()
                 self.fileSelectedWindew.orderOut(self)
                 self.window.makeKeyAndOrderFront(self)

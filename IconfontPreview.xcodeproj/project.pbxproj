@@ -12,11 +12,9 @@
 		66B2F8FC1E20C9B5001FB418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66B2F8FB1E20C9B5001FB418 /* Assets.xcassets */; };
 		66B2F9071E20CA20001FB418 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B2F9061E20CA20001FB418 /* Application.swift */; };
 		66B2F90B1E20CAFA001FB418 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B2F90A1E20CAFA001FB418 /* ViewController.swift */; };
-		66B2F90E1E20CBED001FB418 /* fontawesome-webfont_4.6.3.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66B2F90D1E20CBED001FB418 /* fontawesome-webfont_4.6.3.ttf */; };
-		66B2F9101E20CC3C001FB418 /* WYIconfont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B2F90F1E20CC3C001FB418 /* WYIconfont.swift */; };
-		66B2F9121E20F122001FB418 /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 66B2F9111E20F122001FB418 /* iconfont.ttf */; };
 		66B2F9141E228C0B001FB418 /* FontScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B2F9131E228C0B001FB418 /* FontScrollView.swift */; };
 		66B2F9161E232813001FB418 /* FileSelectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B2F9151E232813001FB418 /* FileSelectedViewController.swift */; };
+		66B2F9181E238EC1001FB418 /* IconTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B2F9171E238EC1001FB418 /* IconTool.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,11 +24,9 @@
 		66B2F9001E20C9B5001FB418 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66B2F9061E20CA20001FB418 /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		66B2F90A1E20CAFA001FB418 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		66B2F90D1E20CBED001FB418 /* fontawesome-webfont_4.6.3.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "fontawesome-webfont_4.6.3.ttf"; path = "Resource/fontawesome-webfont_4.6.3.ttf"; sourceTree = "<group>"; };
-		66B2F90F1E20CC3C001FB418 /* WYIconfont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WYIconfont.swift; sourceTree = "<group>"; };
-		66B2F9111E20F122001FB418 /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = iconfont.ttf; path = Resource/iconfont.ttf; sourceTree = "<group>"; };
 		66B2F9131E228C0B001FB418 /* FontScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontScrollView.swift; sourceTree = "<group>"; };
 		66B2F9151E232813001FB418 /* FileSelectedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileSelectedViewController.swift; sourceTree = "<group>"; };
+		66B2F9171E238EC1001FB418 /* IconTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconTool.swift; sourceTree = "<group>"; };
 		D14CDD23B878A8FD55074F0A /* Pods_IconfontPreview.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IconfontPreview.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F70853ABF149999436E4BDBA /* Pods-IconfontPreview.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IconfontPreview.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IconfontPreview/Pods-IconfontPreview.debug.xcconfig"; sourceTree = "<group>"; };
 		FD8F43741293890A349ECB3B /* Pods-IconfontPreview.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IconfontPreview.release.xcconfig"; path = "Pods/Target Support Files/Pods-IconfontPreview/Pods-IconfontPreview.release.xcconfig"; sourceTree = "<group>"; };
@@ -83,21 +79,11 @@
 				66B2F9061E20CA20001FB418 /* Application.swift */,
 				66B2F9151E232813001FB418 /* FileSelectedViewController.swift */,
 				66B2F9131E228C0B001FB418 /* FontScrollView.swift */,
+				66B2F9171E238EC1001FB418 /* IconTool.swift */,
 				66B2F90A1E20CAFA001FB418 /* ViewController.swift */,
-				66B2F90F1E20CC3C001FB418 /* WYIconfont.swift */,
 				66B2F8FB1E20C9B5001FB418 /* Assets.xcassets */,
-				66B2F90C1E20CBE1001FB418 /* Resource */,
 			);
 			path = IconfontPreview;
-			sourceTree = "<group>";
-		};
-		66B2F90C1E20CBE1001FB418 /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-				66B2F9111E20F122001FB418 /* iconfont.ttf */,
-				66B2F90D1E20CBED001FB418 /* fontawesome-webfont_4.6.3.ttf */,
-			);
-			name = Resource;
 			sourceTree = "<group>";
 		};
 		C6B51FD5D8CCED058BCE7EDF /* Frameworks */ = {
@@ -172,8 +158,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				66B2F8FC1E20C9B5001FB418 /* Assets.xcassets in Resources */,
-				66B2F90E1E20CBED001FB418 /* fontawesome-webfont_4.6.3.ttf in Resources */,
-				66B2F9121E20F122001FB418 /* iconfont.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,7 +219,7 @@
 				66B2F9071E20CA20001FB418 /* Application.swift in Sources */,
 				66B2F90B1E20CAFA001FB418 /* ViewController.swift in Sources */,
 				66B2F8FA1E20C9B5001FB418 /* AppDelegate.swift in Sources */,
-				66B2F9101E20CC3C001FB418 /* WYIconfont.swift in Sources */,
+				66B2F9181E238EC1001FB418 /* IconTool.swift in Sources */,
 				66B2F9161E232813001FB418 /* FileSelectedViewController.swift in Sources */,
 				66B2F9141E228C0B001FB418 /* FontScrollView.swift in Sources */,
 			);

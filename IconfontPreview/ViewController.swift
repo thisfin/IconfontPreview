@@ -11,6 +11,7 @@ import Cocoa
 class ViewController: NSViewController {
     static let size = NSMakeSize(1000, 600)
     let margin: CGFloat = 20
+    var cssFilePath: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,26 +20,33 @@ class ViewController: NSViewController {
         view.layer?.backgroundColor = CGColor.white
         view.frame = NSRect(origin: NSPoint.zero, size: ViewController.size)
 
-        let font = WYIconfont.fontOfSize(16)
-        let f: CGFont = WYIconfont.f
+        // 字符串解析
+        parseCss()
+        // table
 
-        for i in 1..<font.numberOfGlyphs {
-            NSLog("%ld", i)
-            NSLog("%@", f.name(for: CGGlyph(i)) != nil ? (f.name(for: CGGlyph(i)) as! String) : "")
-        }
+
+//        let font = WYIconfont.fontOfSize(16)
+//        let f: CGFont = WYIconfont.f
+//
+//        for i in 1..<font.numberOfGlyphs {
+//            NSLog("%ld", i)
+//            NSLog("%@", f.name(for: CGGlyph(i)) != nil ? (f.name(for: CGGlyph(i)) as! String) : "")
+//        }
+//
+//        
+//
+//        let fontRef: CTFont = CTFontCreateWithName(WYIconfont.p as NSString, 0.0, nil)
+////        let charRef: CFCharacterSet = CTFontCopyCharacterSet(fontRef)
+//        let a: NSCharacterSet = CTFontCopyCharacterSet(fontRef)
+//        for i in 1..<font.numberOfGlyphs {
+//            if a.characterIsMember(unichar(i)) {
+//                NSLog("%c", unichar(i))
+//            } else {
+//                NSLog(">>>%ld", i)
+//            }
+//        }
 
         
-
-        let fontRef: CTFont = CTFontCreateWithName(WYIconfont.p as NSString, 0.0, nil)
-//        let charRef: CFCharacterSet = CTFontCopyCharacterSet(fontRef)
-        let a: NSCharacterSet = CTFontCopyCharacterSet(fontRef)
-        for i in 1..<font.numberOfGlyphs {
-            if a.characterIsMember(unichar(i)) {
-                NSLog("%c", unichar(i))
-            } else {
-                NSLog(">>>%ld", i)
-            }
-        }
 //        NSCharacterSet *characterset = [NSCharacterSet alphanumericCharacterSet];
 //        unichar idx;
 //        for( idx = 0; idx < 256; idx++ )
@@ -162,5 +170,9 @@ class ViewController: NSViewController {
 
     override func loadView() {
         view = NSView()
+    }
+
+    func parseCss() {
+        NSLog("a")
     }
 }
