@@ -14,15 +14,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var fileSelectedWindew: NSWindow!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-//        window = NSWindow()
-//        window.styleMask = [.closable, .miniaturizable, .titled]
-//        window.contentViewController = ViewController()
+        window = NSWindow()
+        window.styleMask = [.closable, .miniaturizable, .titled]
+        window.contentViewController = ViewController()
 //        window.center()
 //        window.makeKeyAndOrderFront(self)
 
         fileSelectedWindew = NSWindow()
         fileSelectedWindew.styleMask = [.closable, .titled]
-        fileSelectedWindew.contentViewController = FileSelectedViewController()
+        fileSelectedWindew.contentViewController = {
+            let controller = FileSelectedViewController()
+            controller.nextWindowAction = {(ttfFilePath, cssFilePath) in
+                self.window.center()
+                self.fileSelectedWindew.orderOut(self)
+                self.window.makeKeyAndOrderFront(self)
+            }
+            return controller
+        }()
         fileSelectedWindew.title = "Select File"
         fileSelectedWindew.center()
         fileSelectedWindew.makeKeyAndOrderFront(self)

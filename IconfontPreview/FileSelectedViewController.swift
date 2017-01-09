@@ -9,6 +9,11 @@
 import Cocoa
 import SnapKit
 
+
+typealias SimpleBlockNoneParameter = () -> Void
+typealias SimpleBlock = (_ data: AnyObject) -> Void
+typealias FileSelectBlock = (_ ttfFilePath: String, _ cssFilePath: String) -> Void
+
 class FileSelectedViewController: NSViewController, NSTextFieldDelegate {
     let size = NSMakeSize(600, 150)
     let margin: CGFloat = 20
@@ -16,11 +21,7 @@ class FileSelectedViewController: NSViewController, NSTextFieldDelegate {
     var submitButton: NSButton!
     var ttfTextField: NSTextField!
     var cssTextField: NSTextField!
-
-    override var representedObject: Any? {
-        didSet {
-        }
-    }
+    var nextWindowAction: FileSelectBlock?
 
     override func loadView() {
         view = NSView()
@@ -40,13 +41,14 @@ class FileSelectedViewController: NSViewController, NSTextFieldDelegate {
 
         ttfTextField = NSTextField()
         ttfTextField.delegate = self
+//        ttfTextField.isEditable = false
         view.addSubview(ttfTextField)
 
         cssTextField = NSTextField()
         cssTextField.delegate = self
         view.addSubview(cssTextField)
 
-        submitButton = NSButton(title: "preview", target: self, action: #selector(FileSelectedViewController.submitButtonClicked(_:)))
+        submitButton = NSButton(title: "next", target: self, action: #selector(FileSelectedViewController.submitButtonClicked(_:)))
         submitButton.isEnabled = false
         view.addSubview(submitButton)
 
@@ -86,6 +88,14 @@ class FileSelectedViewController: NSViewController, NSTextFieldDelegate {
         }
     }
 
+    override func viewDidAppear() {
+        super.viewWillAppear()
+
+        ttfTextField.stringValue = "a"
+        cssTextField.stringValue = "b"
+        setSubmitButtonStatus()
+    }
+
     func ttfButtonClicked(_ sender: NSButton) {
         fileSelect("ttf")
     }
@@ -94,7 +104,7 @@ class FileSelectedViewController: NSViewController, NSTextFieldDelegate {
         fileSelect("css")
     }
 
-    func fileSelect(_ fileType: String) {
+    func fileSelect(_ fileType: String) { // 文件选择器
         let panel = NSOpenPanel()
         panel.allowsMultipleSelection = false
         panel.canChooseFiles = true
@@ -119,12 +129,38 @@ class FileSelectedViewController: NSViewController, NSTextFieldDelegate {
         }
     }
 
-    func setSubmitButtonStatus() {
+    func setSubmitButtonStatus() { // 下一步按钮状态设置
         submitButton.isEnabled = ttfTextField.stringValue.characters.count > 0 && cssTextField.stringValue.characters.count > 0
     }
 
-    func submitButtonClicked(_ sender: NSButton) {
+    func submitButtonClicked(_ sender: NSButton) { // 下一步
+        if fileCheck("ttf") && fileCheck("css") {
+            if let eventAction = nextWindowAction {
+                eventAction(ttfTextField.stringValue, cssTextField.stringValue)
+            }
+        }
+    }
 
+    func fileCheck(_ fileType: String) -> Bool { // 检查文件时候存在
+        var pathString = ""
+        switch fileType {
+        case "ttf":
+            pathString = ttfTextField.stringValue
+        case "css":
+            pathString = cssTextField.stringValue
+        default:
+            return false
+        }
+        if !FileManager.default.fileExists(atPath: pathString) {
+            let alert = NSAlert()
+            alert.messageText = "error"
+            alert.informativeText = "file \(pathString) was not found"
+            alert.alertStyle = .warning
+            alert.beginSheetModal(for: NSApp.mainWindow!, completionHandler: nil)
+//            alert.runModal() // 屏幕中间弹出
+            return false
+        }
+        return true
     }
 
     // MARK: - NSTextFieldDelegate
