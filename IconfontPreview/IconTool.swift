@@ -13,7 +13,7 @@ class IconTool: NSObject {
     private static let selfInstance = IconTool()
 
     private var fonts: [String : String] = [:] // key->path, value->name
-    private var nowFontName: String!
+    var nowFontName: String!
 
     // 单例范例
     public static var sharedInstance: IconTool {

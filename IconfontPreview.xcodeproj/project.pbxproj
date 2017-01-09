@@ -15,6 +15,7 @@
 		66B2F9141E228C0B001FB418 /* FontScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B2F9131E228C0B001FB418 /* FontScrollView.swift */; };
 		66B2F9161E232813001FB418 /* FileSelectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B2F9151E232813001FB418 /* FileSelectedViewController.swift */; };
 		66B2F9181E238EC1001FB418 /* IconTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B2F9171E238EC1001FB418 /* IconTool.swift */; };
+		66B2F91A1E23F105001FB418 /* CharacterInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B2F9191E23F105001FB418 /* CharacterInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		66B2F9131E228C0B001FB418 /* FontScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontScrollView.swift; sourceTree = "<group>"; };
 		66B2F9151E232813001FB418 /* FileSelectedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileSelectedViewController.swift; sourceTree = "<group>"; };
 		66B2F9171E238EC1001FB418 /* IconTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconTool.swift; sourceTree = "<group>"; };
+		66B2F9191E23F105001FB418 /* CharacterInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterInfo.swift; sourceTree = "<group>"; };
 		D14CDD23B878A8FD55074F0A /* Pods_IconfontPreview.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IconfontPreview.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F70853ABF149999436E4BDBA /* Pods-IconfontPreview.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IconfontPreview.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IconfontPreview/Pods-IconfontPreview.debug.xcconfig"; sourceTree = "<group>"; };
 		FD8F43741293890A349ECB3B /* Pods-IconfontPreview.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IconfontPreview.release.xcconfig"; path = "Pods/Target Support Files/Pods-IconfontPreview/Pods-IconfontPreview.release.xcconfig"; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				66B2F9001E20C9B5001FB418 /* Info.plist */,
 				66B2F8F91E20C9B5001FB418 /* AppDelegate.swift */,
 				66B2F9061E20CA20001FB418 /* Application.swift */,
+				66B2F9191E23F105001FB418 /* CharacterInfo.swift */,
 				66B2F9151E232813001FB418 /* FileSelectedViewController.swift */,
 				66B2F9131E228C0B001FB418 /* FontScrollView.swift */,
 				66B2F9171E238EC1001FB418 /* IconTool.swift */,
@@ -216,6 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66B2F91A1E23F105001FB418 /* CharacterInfo.swift in Sources */,
 				66B2F9071E20CA20001FB418 /* Application.swift in Sources */,
 				66B2F90B1E20CAFA001FB418 /* ViewController.swift in Sources */,
 				66B2F8FA1E20C9B5001FB418 /* AppDelegate.swift in Sources */,
