@@ -13,6 +13,7 @@ class ViewController: NSViewController {
     let margin: CGFloat = 20
     var cssFilePath: String!
     var characters: [CharacterInfo] = []
+    var scrollView: FontScrollView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,13 @@ class ViewController: NSViewController {
         // 字符串解析
         parseCss()
         // table
+
+        scrollView = FontScrollView()
+        view.addSubview(scrollView)
+        scrollView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        scrollView.setTableData(characters)
     }
 
     override var representedObject: Any? {
@@ -70,8 +78,9 @@ class ViewController: NSViewController {
                     scan.scanUpTo("\"", into: nil)
                     scan.scanLocation += "\"".characters.count
                     scan.scanUpTo("\"", into: &code)
+                    let code2 = code?.replacingOccurrences(of: "\\", with: "")
 
-                    if let name1 = name as String?, let code1 = code as String? {
+                    if let name1 = name as String?, let code1 = code2 {
                         let character = CharacterInfo(name: name1, code: code1)
                         characters.append(character)
                     }
