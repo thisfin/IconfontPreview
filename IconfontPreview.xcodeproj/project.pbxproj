@@ -11,7 +11,7 @@
 		66B2F8FA1E20C9B5001FB418 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B2F8F91E20C9B5001FB418 /* AppDelegate.swift */; };
 		66B2F8FC1E20C9B5001FB418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66B2F8FB1E20C9B5001FB418 /* Assets.xcassets */; };
 		66B2F9071E20CA20001FB418 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B2F9061E20CA20001FB418 /* Application.swift */; };
-		66B2F90B1E20CAFA001FB418 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B2F90A1E20CAFA001FB418 /* ViewController.swift */; };
+		66B2F90B1E20CAFA001FB418 /* FontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B2F90A1E20CAFA001FB418 /* FontViewController.swift */; };
 		66B2F9141E228C0B001FB418 /* FontScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B2F9131E228C0B001FB418 /* FontScrollView.swift */; };
 		66B2F9161E232813001FB418 /* FileSelectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B2F9151E232813001FB418 /* FileSelectedViewController.swift */; };
 		66B2F9181E238EC1001FB418 /* IconTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B2F9171E238EC1001FB418 /* IconTool.swift */; };
@@ -24,7 +24,7 @@
 		66B2F8FB1E20C9B5001FB418 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		66B2F9001E20C9B5001FB418 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66B2F9061E20CA20001FB418 /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
-		66B2F90A1E20CAFA001FB418 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		66B2F90A1E20CAFA001FB418 /* FontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontViewController.swift; sourceTree = "<group>"; };
 		66B2F9131E228C0B001FB418 /* FontScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontScrollView.swift; sourceTree = "<group>"; };
 		66B2F9151E232813001FB418 /* FileSelectedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileSelectedViewController.swift; sourceTree = "<group>"; };
 		66B2F9171E238EC1001FB418 /* IconTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconTool.swift; sourceTree = "<group>"; };
@@ -82,8 +82,8 @@
 				66B2F9191E23F105001FB418 /* CharacterInfo.swift */,
 				66B2F9151E232813001FB418 /* FileSelectedViewController.swift */,
 				66B2F9131E228C0B001FB418 /* FontScrollView.swift */,
+				66B2F90A1E20CAFA001FB418 /* FontViewController.swift */,
 				66B2F9171E238EC1001FB418 /* IconTool.swift */,
-				66B2F90A1E20CAFA001FB418 /* ViewController.swift */,
 				66B2F8FB1E20C9B5001FB418 /* Assets.xcassets */,
 			);
 			path = IconfontPreview;
@@ -221,7 +221,7 @@
 			files = (
 				66B2F91A1E23F105001FB418 /* CharacterInfo.swift in Sources */,
 				66B2F9071E20CA20001FB418 /* Application.swift in Sources */,
-				66B2F90B1E20CAFA001FB418 /* ViewController.swift in Sources */,
+				66B2F90B1E20CAFA001FB418 /* FontViewController.swift in Sources */,
 				66B2F8FA1E20C9B5001FB418 /* AppDelegate.swift in Sources */,
 				66B2F9181E238EC1001FB418 /* IconTool.swift in Sources */,
 				66B2F9161E232813001FB418 /* FileSelectedViewController.swift in Sources */,

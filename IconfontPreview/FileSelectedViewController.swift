@@ -10,9 +10,8 @@ import Cocoa
 import SnapKit
 
 
-typealias SimpleBlockNoneParameter = () -> Void
-typealias SimpleBlock = (_ data: AnyObject) -> Void
-typealias FileSelectBlock = (_ ttfFilePath: String, _ cssFilePath: String) -> Void
+typealias FileSelectBlock = (_ characterInfos: [CharacterInfo]) -> Void
+
 
 class FileSelectedViewController: NSViewController, NSTextFieldDelegate {
     let size = NSMakeSize(600, 150)
@@ -22,6 +21,7 @@ class FileSelectedViewController: NSViewController, NSTextFieldDelegate {
     var ttfTextField: NSTextField!
     var cssTextField: NSTextField!
     var nextWindowAction: FileSelectBlock?
+    var characterInfos: [CharacterInfo] = []
 
     override func loadView() {
         view = NSView()
@@ -91,8 +91,11 @@ class FileSelectedViewController: NSViewController, NSTextFieldDelegate {
     override func viewDidAppear() {
         super.viewWillAppear()
 
-        ttfTextField.stringValue = "/Users/wenyou/Desktop/font_p9brfmgxs1qbyb9/iconfont.ttf"
-        cssTextField.stringValue = "/Users/wenyou/Desktop/font_p9brfmgxs1qbyb9/iconfont.css"
+        ttfTextField.stringValue = "/Users/wenyou/Desktop/font/iconfont.ttf"
+//        ttfTextField.stringValue = "/Users/wenyou/Desktop/font/fontawesome-webfont.ttf"
+        cssTextField.stringValue = "/Users/wenyou/Desktop/font/iconfont.css"
+//        cssTextField.stringValue = "/Users/wenyou/Desktop/font/font-awesome.css"
+//        cssTextField.stringValue = "/Users/wenyou/Desktop/font/font-awesome.min.css"
         setSubmitButtonStatus()
     }
 
@@ -134,9 +137,9 @@ class FileSelectedViewController: NSViewController, NSTextFieldDelegate {
     }
 
     func submitButtonClicked(_ sender: NSButton) { // 下一步
-        if fileCheck("ttf") && fileCheck("css") && IconTool.sharedInstance.registFont(ttfTextField.stringValue) {
+        if fileCheck("ttf") && fileCheck("css") && IconTool.sharedInstance.registFont(ttfTextField.stringValue) && parseCss() {
             if let eventAction = nextWindowAction {
-                eventAction(ttfTextField.stringValue, cssTextField.stringValue)
+                eventAction(characterInfos)
             }
         }
     }
@@ -161,6 +164,89 @@ class FileSelectedViewController: NSViewController, NSTextFieldDelegate {
             return false
         }
         return true
+    }
+
+    func parseCss() -> Bool{
+        do {
+            var fontName: NSString?
+
+            let content = try String.init(contentsOfFile: cssTextField.stringValue) // 解析字体名
+            let scanner = Scanner(string: content)
+            scanner.scanUpTo("@font-face", into: nil)
+            scanner.scanLocation += "@font-face".characters.count
+            scanner.scanUpTo("font-family", into: nil)
+            scanner.scanLocation += "font-family".characters.count
+
+            while scanner.scanLocation < content.characters.count {
+                let character = (content as NSString).substring(with: NSRange.init(location: scanner.scanLocation, length: 1))
+                if character == "\"" {
+                    scanner.scanLocation += 1
+                    scanner.scanUpTo("\"", into: &fontName)
+                    break;
+                } else if character == "\'" {
+                    scanner.scanLocation += 1
+                    scanner.scanUpTo("\'", into: &fontName)
+                    break;
+                } else {
+                    scanner.scanLocation += 1
+                }
+            }
+
+            if fontName as? String != IconTool.sharedInstance.nowFontName {
+                let alert = NSAlert()
+                alert.messageText = "error"
+                alert.informativeText = "ttf font and css font not for same"
+                alert.alertStyle = .warning
+                alert.beginSheetModal(for: NSApp.mainWindow!, completionHandler: nil)
+                return false
+            }
+
+            // *?为非贪婪匹配; .不包括\n, 需使用[\s\S]; 注意两个引号
+            let regex = try! NSRegularExpression(pattern:"\\.[^\\.]+?:before[\\s\\S]*?content:[\\s\\S]*?(\"|\')[\\s\\S]*?(\"|\')", options: []) // 解析字体
+            regex.enumerateMatches(in: content, options: [], range: NSMakeRange(0, content.characters.count)) { result, flags, stop in
+                if let range = result?.range {
+                    let str = (content as NSString).substring(with: range)
+                    let scan = Scanner(string: str)
+                    var name: NSString?
+                    var code: NSString?
+                    scan.scanUpTo(".", into: nil)
+                    scan.scanLocation += ".".characters.count
+                    scan.scanUpTo(":before", into: &name)
+
+                    while scan.scanLocation < str.characters.count {
+                        let character = (str as NSString).substring(with: NSRange.init(location: scan.scanLocation, length: 1))
+                        if character == "\"" {
+                            scan.scanLocation += 1
+                            scan.scanUpTo("\"", into: &code)
+                            break;
+                        } else if character == "\'" {
+                            scan.scanLocation += 1
+                            scan.scanUpTo("\'", into: &code)
+                            break;
+                        } else {
+                            scan.scanLocation += 1
+                        }
+                    }
+                    let code2 = code?.replacingOccurrences(of: "\\", with: "")
+
+                    if let name1 = name as String?, let code1 = code2 {
+                        let characterInfo = CharacterInfo(name: name1, code: code1)
+                        characterInfos.append(characterInfo)
+                    }
+                }
+            }
+        } catch {
+            let alert = NSAlert()
+            alert.messageText = "error"
+            alert.informativeText = "css file parse error"
+            alert.alertStyle = .warning
+            alert.beginSheetModal(for: NSApp.mainWindow!, completionHandler: nil)
+            return false
+        }
+        return true
+        //        if let content = try? String.init(contentsOfFile: cssFilePath) { // 两种拆包方法
+        //            NSLog(content)
+        //        }
     }
 
     // MARK: - NSTextFieldDelegate

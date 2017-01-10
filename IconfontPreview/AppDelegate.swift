@@ -23,10 +23,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         fileSelectedWindew.styleMask = [.closable, .titled]
         fileSelectedWindew.contentViewController = {
             let controller = FileSelectedViewController()
-            controller.nextWindowAction = {(ttfFilePath, cssFilePath) in
+            controller.nextWindowAction = {(characterInfos) in
                 self.window.contentViewController = {
-                    let fontController = ViewController()
-                    fontController.cssFilePath = cssFilePath
+                    let fontController = FontViewController()
+                    fontController.characterInfos = characterInfos
                     return fontController
                 }()
                 self.window.center()
