@@ -17,8 +17,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         fontWindow = NSWindow()
         fontWindow.delegate = self;
         fontWindow.styleMask = [.closable, .miniaturizable, .titled]
-//        fontWindow.center()
-//        fontWindow.makeKeyAndOrderFront(self)
 
         fileSelectedWindew = NSWindow()
         fileSelectedWindew.styleMask = [.closable, .titled]
@@ -39,14 +37,41 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         fileSelectedWindew.title = "Select File"
         fileSelectedWindew.center()
         fileSelectedWindew.makeKeyAndOrderFront(self)
+
+        // 菜单
+        NSApplication.shared().menu = {
+            let menu = NSMenu()
+            menu.addItem({
+                let iconfontPreviewItem = NSMenuItem()
+                iconfontPreviewItem.submenu = {
+                    let submenu = NSMenu()
+                    submenu.addItem(NSMenuItem(title: "About \(ProcessInfo.processInfo.processName)", action: #selector(AppDelegate.about(_:)), keyEquivalent: ""))
+                    submenu.addItem(NSMenuItem.separator())
+                    submenu.addItem(NSMenuItem(title: "Quit \(ProcessInfo.processInfo.processName)", action: #selector(AppDelegate.quit(_:)), keyEquivalent: ""))
+                    return submenu
+                }()
+                return iconfontPreviewItem
+                }())
+            return menu
+        }()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
 
+    // MARK: - NSWindowDelegate
     public func windowShouldClose(_ sender: Any) -> Bool {
         fileSelectedWindew.makeKeyAndOrderFront(self)
         fontWindow.orderOut(self)
         return false;
-    }}
+    }
+
+    func about(_ sender: NSMenuItem) {
+        NSApp.orderFrontStandardAboutPanel(self)
+    }
+
+    func quit(_ sender: NSMenuItem) {
+        NSApp.terminate(self)
+    }
+}

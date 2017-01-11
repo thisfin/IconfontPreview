@@ -1,12 +1,13 @@
 # IconfontPreview
 
-iconfont 预览
+* 功能
+    - 预览iconfont文件
+    - 点击拷贝unicode值
+    - font-awesome & iconfont 已经测试通过
+    - 自动保存上次打开路径
 
-- css解析 ok
-- 字体展现 ok
-- 异常处理 ok
-- 复制粘贴 & 悬浮 ok
-- 缓存配置文件读写 ok
-- 退出事件监听 ok
-- 菜单栏 quit
-- 打开文件异常
+* undo
+    - 去掉css文件的依赖, 直接读取ttf文件
+    - 文件选择器的异常处理
+    - 优化窗口切换代码
+    - 大文件打开卡顿优化
