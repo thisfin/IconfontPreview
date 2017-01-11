@@ -86,17 +86,12 @@ class FileSelectedViewController: NSViewController, NSTextFieldDelegate {
             make.width.equalTo(ttfButton)
             make.height.equalTo(ttfButton)
         }
-    }
 
-    override func viewDidAppear() {
-        super.viewWillAppear()
-
-        ttfTextField.stringValue = "/Users/wenyou/Desktop/font/iconfont.ttf"
-//        ttfTextField.stringValue = "/Users/wenyou/Desktop/font/fontawesome-webfont.ttf"
-        cssTextField.stringValue = "/Users/wenyou/Desktop/font/iconfont.css"
-//        cssTextField.stringValue = "/Users/wenyou/Desktop/font/font-awesome.css"
-//        cssTextField.stringValue = "/Users/wenyou/Desktop/font/font-awesome.min.css"
-        setSubmitButtonStatus()
+        if let filePathInfo = Preference.sharedInstance.readFilePahtInfo() {
+            ttfTextField.stringValue = filePathInfo.ttfFilePath
+            cssTextField.stringValue = filePathInfo.cssFilePath
+            setSubmitButtonStatus()
+        }
     }
 
     func ttfButtonClicked(_ sender: NSButton) {
@@ -139,6 +134,8 @@ class FileSelectedViewController: NSViewController, NSTextFieldDelegate {
     func submitButtonClicked(_ sender: NSButton) { // 下一步
         if fileCheck("ttf") && fileCheck("css") && IconTool.sharedInstance.registFont(ttfTextField.stringValue) && parseCss() {
             if let eventAction = nextWindowAction {
+                Preference.sharedInstance.writeFilePathInfo(
+                    FilePathInfo(ttfFilePath: ttfTextField.stringValue, cssFilePath: cssTextField.stringValue))
                 eventAction(characterInfos)
             }
         }
