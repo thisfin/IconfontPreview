@@ -40,10 +40,10 @@ class IconTool: NSObject {
 
             if !CTFontManagerRegisterGraphicsFont(font!, &error) {
                 let errorDescription: CFString = CFErrorCopyDescription(error!.takeUnretainedValue())
-                NSLog("Failed to load font: %@", errorDescription as String)
+                NSLog("Failed to load font: \(errorDescription as String)")
                 let alert = NSAlert()
                 alert.messageText = "error"
-                alert.informativeText = String(format: "Failed to load font: %@", errorDescription as String)
+                alert.informativeText = "Failed to load font: \(errorDescription as String)"
                 alert.alertStyle = .warning
                 alert.beginSheetModal(for: NSApp.mainWindow!, completionHandler: nil)
                 return false

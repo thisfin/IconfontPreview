@@ -165,6 +165,7 @@ class FileSelectedViewController: NSViewController, NSTextFieldDelegate {
 
     func parseCss() -> Bool{
         do {
+            characterInfos.removeAll()
             var fontName: NSString?
 
             let content = try String.init(contentsOfFile: cssTextField.stringValue) // 解析字体名

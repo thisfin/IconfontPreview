@@ -9,29 +9,30 @@
 import Cocoa
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
-    var window: NSWindow!
+class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
+    var fontWindow: NSWindow!
     var fileSelectedWindew: NSWindow!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        window = NSWindow()
-        window.styleMask = [.closable, .miniaturizable, .titled]
-//        window.center()
-//        window.makeKeyAndOrderFront(self)
+        fontWindow = NSWindow()
+        fontWindow.delegate = self;
+        fontWindow.styleMask = [.closable, .miniaturizable, .titled]
+//        fontWindow.center()
+//        fontWindow.makeKeyAndOrderFront(self)
 
         fileSelectedWindew = NSWindow()
         fileSelectedWindew.styleMask = [.closable, .titled]
         fileSelectedWindew.contentViewController = {
             let controller = FileSelectedViewController()
             controller.nextWindowAction = {(characterInfos) in
-                self.window.contentViewController = {
+                self.fontWindow.contentViewController = {
                     let fontController = FontViewController()
                     fontController.characterInfos = characterInfos
                     return fontController
                 }()
-                self.window.center()
+                self.fontWindow.center()
+                self.fontWindow.makeKeyAndOrderFront(self)
                 self.fileSelectedWindew.orderOut(self)
-                self.window.makeKeyAndOrderFront(self)
             }
             return controller
         }()
@@ -43,4 +44,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
-}
+
+    public func windowShouldClose(_ sender: Any) -> Bool {
+        fileSelectedWindew.makeKeyAndOrderFront(self)
+        fontWindow.orderOut(self)
+        return false;
+    }}
