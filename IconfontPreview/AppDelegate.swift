@@ -19,6 +19,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         fontWindow.styleMask = [.closable, .miniaturizable, .titled]
 
         fileSelectedWindew = NSWindow()
+        fileSelectedWindew.isReleasedWhenClosed = false
         fileSelectedWindew.styleMask = [.closable, .titled]
         fileSelectedWindew.contentViewController = {
             let controller = FileSelectedViewController()
@@ -65,6 +66,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         fileSelectedWindew.makeKeyAndOrderFront(self)
         fontWindow.orderOut(self)
         return false;
+    }
+
+    public func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+        fileSelectedWindew.setIsVisible(true)
+        return true
     }
 
     func about(_ sender: NSMenuItem) {
