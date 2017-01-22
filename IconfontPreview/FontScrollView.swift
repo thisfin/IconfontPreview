@@ -13,6 +13,7 @@ class FontScrollView: NSScrollView, NSTableViewDataSource, NSTableViewDelegate {
     private var tableView: NSTableView!
     var datas: [CharacterInfo]!
     var nowCharacterInfo: CharacterInfo!
+    var characterDict: [String : CharacterInfo] = [:]
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -51,10 +52,11 @@ class FontScrollView: NSScrollView, NSTableViewDataSource, NSTableViewDelegate {
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         if let identifier = tableColumn?.identifier {
             if ((row * columnSize + Int(identifier)!) < datas.count) {
-                nowCharacterInfo = datas[row * columnSize + Int(identifier)!]
-                let charCode = UInt32(nowCharacterInfo.code, radix: 16) // unicode转string
+                let characterInfo = datas[row * columnSize + Int(identifier)!]
+                let charCode = UInt32(characterInfo.code, radix: 16) // unicode转string
                 let unicode = UnicodeScalar(charCode!)
                 let str = String.init(unicode!)
+                characterDict[str] = characterInfo
                 let button = NSButton.init(title: str, target: self, action: #selector(FontScrollView.iconButtonClicked(_:)))
                 button.font = IconTool.fontOfSize(32)
                 button.isBordered = false
@@ -90,7 +92,8 @@ class FontScrollView: NSScrollView, NSTableViewDataSource, NSTableViewDelegate {
         NSLog("textfield")
     }
 
-    func iconButtonClicked(_ sender: NSTextField) {
+    func iconButtonClicked(_ sender: NSButton) {
+        nowCharacterInfo = characterDict[sender.title]
         if let event = NSApplication.shared().currentEvent {
             NSMenu.popUpContextMenu({
                 let menu = NSMenu()

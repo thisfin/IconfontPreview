@@ -31,6 +31,7 @@
 		66B2F9151E232813001FB418 /* FileSelectedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileSelectedViewController.swift; sourceTree = "<group>"; };
 		66B2F9171E238EC1001FB418 /* IconTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconTool.swift; sourceTree = "<group>"; };
 		66B2F9191E23F105001FB418 /* CharacterInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterInfo.swift; sourceTree = "<group>"; };
+		66DB29451E34BC3500ED4C68 /* IconfontPreview.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IconfontPreview.entitlements; sourceTree = "<group>"; };
 		D14CDD23B878A8FD55074F0A /* Pods_IconfontPreview.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IconfontPreview.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F70853ABF149999436E4BDBA /* Pods-IconfontPreview.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IconfontPreview.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IconfontPreview/Pods-IconfontPreview.debug.xcconfig"; sourceTree = "<group>"; };
 		FD8F43741293890A349ECB3B /* Pods-IconfontPreview.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IconfontPreview.release.xcconfig"; path = "Pods/Target Support Files/Pods-IconfontPreview/Pods-IconfontPreview.release.xcconfig"; sourceTree = "<group>"; };
@@ -78,6 +79,7 @@
 		66B2F8F81E20C9B5001FB418 /* IconfontPreview */ = {
 			isa = PBXGroup;
 			children = (
+				66DB29451E34BC3500ED4C68 /* IconfontPreview.entitlements */,
 				66B2F9001E20C9B5001FB418 /* Info.plist */,
 				66B2F8F91E20C9B5001FB418 /* AppDelegate.swift */,
 				66B2F9061E20CA20001FB418 /* Application.swift */,
@@ -137,6 +139,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = CY25956VB2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -331,10 +338,13 @@
 			baseConfigurationReference = F70853ABF149999436E4BDBA /* Pods-IconfontPreview.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = IconfontPreview/IconfontPreview.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = CY25956VB2;
 				INFOPLIST_FILE = IconfontPreview/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = win.sourcecode.IconfontPreview;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -346,10 +356,13 @@
 			baseConfigurationReference = FD8F43741293890A349ECB3B /* Pods-IconfontPreview.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = IconfontPreview/IconfontPreview.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = CY25956VB2;
 				INFOPLIST_FILE = IconfontPreview/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = win.sourcecode.IconfontPreview;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;

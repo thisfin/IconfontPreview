@@ -61,5 +61,6 @@ class IconTool: NSObject {
             }
         }
         assert(false, "font couldn't be loaded")
+        return NSFont()
     }
 }
