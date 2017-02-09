@@ -14,4 +14,4 @@ iconfont文件预览
     - 文件选择器的异常处理
     - 优化窗口切换代码 window switch
     - 大文件打开卡顿优化
-    - command+q
+    - command+q
