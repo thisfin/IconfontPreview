@@ -35,7 +35,7 @@ class IconTool: NSObject {
             let font: CGFont? = CGFont(dataProvider!)
             var error: Unmanaged<CFError>? = nil
 
-            nowFontName = font?.fullName as! String
+            nowFontName = (font?.fullName)! as String
             fonts[path] = nowFontName
 
             if !CTFontManagerRegisterGraphicsFont(font!, &error) {

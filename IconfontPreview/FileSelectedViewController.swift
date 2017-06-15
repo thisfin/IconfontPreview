@@ -190,7 +190,7 @@ class FileSelectedViewController: NSViewController, NSTextFieldDelegate {
                 }
             }
 
-            if fontName as? String != IconTool.sharedInstance.nowFontName {
+            if fontName! as String != IconTool.sharedInstance.nowFontName {
                 let alert = NSAlert()
                 alert.messageText = "error"
                 alert.informativeText = "ttf font and css font not for same"
