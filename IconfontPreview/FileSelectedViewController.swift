@@ -116,8 +116,10 @@ class FileSelectedViewController: NSViewController, NSTextFieldDelegate {
                     switch fileType {
                     case "ttf":
                         self.ttfTextField.stringValue = path.path
+                        FilePermissions.sharedInstance.addBookmark(url: path, fileType: "ttf")
                     case "css":
                         self.cssTextField.stringValue = path.path
+                        FilePermissions.sharedInstance.addBookmark(url: path, fileType: "css")
                     default:
                         break
                     }
@@ -163,12 +165,16 @@ class FileSelectedViewController: NSViewController, NSTextFieldDelegate {
         return true
     }
 
-    func parseCss() -> Bool{
-        do {
+    func parseCss() -> Bool {
+//        do {
             characterInfos.removeAll()
             var fontName: NSString?
 
-            let content = try String.init(contentsOfFile: cssTextField.stringValue) // 解析字体名
+            var content: String = "" // 解析字体名
+            FilePermissions.sharedInstance.handleFile(fileType: "css", newPath: cssTextField.stringValue, block: { (url) in
+                content = try! String.init(contentsOf: url)
+            })
+
             let scanner = Scanner(string: content)
             scanner.scanUpTo("@font-face", into: nil)
             scanner.scanLocation += "@font-face".characters.count
@@ -233,14 +239,14 @@ class FileSelectedViewController: NSViewController, NSTextFieldDelegate {
                     }
                 }
             }
-        } catch {
-            let alert = NSAlert()
-            alert.messageText = "error"
-            alert.informativeText = "css file parse error"
-            alert.alertStyle = .warning
-            alert.beginSheetModal(for: NSApp.mainWindow!, completionHandler: nil)
-            return false
-        }
+//        } catch {
+//            let alert = NSAlert()
+//            alert.messageText = "error"
+//            alert.informativeText = "css file parse error"
+//            alert.alertStyle = .warning
+//            alert.beginSheetModal(for: NSApp.mainWindow!, completionHandler: nil)
+//            return false
+//        }
         return true
         //        if let content = try? String.init(contentsOfFile: cssFilePath) { // 两种拆包方法
         //            NSLog(content)

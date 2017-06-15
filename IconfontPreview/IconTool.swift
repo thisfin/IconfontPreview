@@ -30,7 +30,12 @@ class IconTool: NSObject {
             return true
         }
 
-        if let dynamicFontData = NSData(contentsOfFile: path) {
+        var data: NSData?
+        FilePermissions.sharedInstance.handleFile(fileType: "ttf", newPath: path) { (url) in
+            data = NSData.init(contentsOf: url)
+        }
+
+        if let dynamicFontData = data {
             let dataProvider: CGDataProvider? = CGDataProvider(data: dynamicFontData)
             let font: CGFont? = CGFont(dataProvider!)
             var error: Unmanaged<CFError>? = nil
