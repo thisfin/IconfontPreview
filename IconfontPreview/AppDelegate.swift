@@ -26,7 +26,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
             controller.nextWindowAction = {(characterInfos) in
                 self.fontWindow.contentViewController = {
                     let fontController = FontViewController()
-                    fontController.characterInfos = characterInfos
+                        fontController.characterInfos = IconTool.sharedInstance.datas
+//                    fontController.characterInfos = characterInfos
                     return fontController
                 }()
                 self.fontWindow.center()
