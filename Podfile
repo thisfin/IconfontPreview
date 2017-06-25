@@ -4,6 +4,7 @@ use_frameworks!
 
 def pods
     pod 'SnapKit'
+    pod 'WYKit',    :path => '~/Documents/git/WYKit'
 end
 
 target 'IconfontPreview' do

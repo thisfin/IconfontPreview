@@ -11,6 +11,7 @@
 		30847AB41F001C6100C20AAE /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30847AB31F001C6100C20AAE /* ShowViewController.swift */; };
 		3C55315FD0D58EF3BA71A2A0 /* Pods_IconfontPreview.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D14CDD23B878A8FD55074F0A /* Pods_IconfontPreview.framework */; };
 		660BA6E91E25DC3C008DC5C9 /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660BA6E81E25DC3C008DC5C9 /* Preference.swift */; };
+		666084531F002DC9000D1B9C /* SimpleCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666084521F002DC9000D1B9C /* SimpleCollectionViewItem.swift */; };
 		666158841EF2223F007D650B /* FilePermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666158831EF2223F007D650B /* FilePermissions.swift */; };
 		66B2F8FA1E20C9B5001FB418 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B2F8F91E20C9B5001FB418 /* AppDelegate.swift */; };
 		66B2F8FC1E20C9B5001FB418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66B2F8FB1E20C9B5001FB418 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 		30847AB11EFFB5A700C20AAE /* CharacterSet+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CharacterSet+Helper.swift"; sourceTree = "<group>"; };
 		30847AB31F001C6100C20AAE /* ShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowViewController.swift; sourceTree = "<group>"; };
 		660BA6E81E25DC3C008DC5C9 /* Preference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
+		666084521F002DC9000D1B9C /* SimpleCollectionViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCollectionViewItem.swift; sourceTree = "<group>"; };
 		666158831EF2223F007D650B /* FilePermissions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilePermissions.swift; sourceTree = "<group>"; };
 		66B2F8F61E20C9B5001FB418 /* IconfontPreview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IconfontPreview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66B2F8F91E20C9B5001FB418 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,15 +92,16 @@
 				66B2F8F91E20C9B5001FB418 /* AppDelegate.swift */,
 				66B2F9061E20CA20001FB418 /* Application.swift */,
 				66B2F9191E23F105001FB418 /* CharacterInfo.swift */,
+				30847AB11EFFB5A700C20AAE /* CharacterSet+Helper.swift */,
 				666158831EF2223F007D650B /* FilePermissions.swift */,
 				66B2F9151E232813001FB418 /* FileSelectedViewController.swift */,
 				66B2F9131E228C0B001FB418 /* FontScrollView.swift */,
 				66B2F90A1E20CAFA001FB418 /* FontViewController.swift */,
 				66B2F9171E238EC1001FB418 /* IconTool.swift */,
 				660BA6E81E25DC3C008DC5C9 /* Preference.swift */,
-				66B2F8FB1E20C9B5001FB418 /* Assets.xcassets */,
-				30847AB11EFFB5A700C20AAE /* CharacterSet+Helper.swift */,
 				30847AB31F001C6100C20AAE /* ShowViewController.swift */,
+				666084521F002DC9000D1B9C /* SimpleCollectionViewItem.swift */,
+				66B2F8FB1E20C9B5001FB418 /* Assets.xcassets */,
 			);
 			path = IconfontPreview;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				66B2F9181E238EC1001FB418 /* IconTool.swift in Sources */,
 				30847AB21EFFB5A700C20AAE /* CharacterSet+Helper.swift in Sources */,
 				66B2F9161E232813001FB418 /* FileSelectedViewController.swift in Sources */,
+				666084531F002DC9000D1B9C /* SimpleCollectionViewItem.swift in Sources */,
 				666158841EF2223F007D650B /* FilePermissions.swift in Sources */,
 				66B2F9141E228C0B001FB418 /* FontScrollView.swift in Sources */,
 			);
