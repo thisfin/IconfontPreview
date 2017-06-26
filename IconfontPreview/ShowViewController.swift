@@ -10,7 +10,7 @@ import AppKit
 
 class ShowViewController: NSViewController {
     private var collectionView: NSCollectionView!
-    var datas: [CharacterInfo]!
+    var fontManager: FontManager!
 
     override func loadView() {
         view = NSView()
@@ -47,13 +47,14 @@ class ShowViewController: NSViewController {
 
 extension ShowViewController: NSCollectionViewDataSource {
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
-        return datas.count
+        return fontManager.characterInfos.count
     }
 
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
         let collectionViewItem = collectionView.makeItem(withIdentifier: SimpleCollectionViewItem.className(), for: indexPath)
         if let item = collectionViewItem as? SimpleCollectionViewItem {
-            item.configData(characterInfo: datas[indexPath.item])
+            item.fontManager = fontManager
+            item.configData(characterInfo: fontManager.characterInfos[indexPath.item])
         }
         return collectionViewItem
     }
@@ -61,6 +62,7 @@ extension ShowViewController: NSCollectionViewDataSource {
 
 extension ShowViewController: NSCollectionViewDelegate {
     func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
+        NSLog("\(indexPaths)")
 //        if 0 > indexPaths.
 //        nowCharacterInfo = characterDict[indexPaths.item]
 //        if let event = NSApplication.shared().currentEvent {

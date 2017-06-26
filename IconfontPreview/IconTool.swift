@@ -35,7 +35,7 @@ class IconTool: NSObject {
         if let dynamicFontData = data {
             let dataProvider: CGDataProvider? = CGDataProvider(data: dynamicFontData)
             let font: CGFont? = CGFont(dataProvider!)
-            var error: Unmanaged<CFError>? = nil
+            var error: Unmanaged<CFError>?
 
 
 //            if let array = font?.tableTags as? NSArray {
@@ -58,6 +58,8 @@ class IconTool: NSObject {
                 alert.beginSheetModal(for: NSApp.mainWindow!, completionHandler: nil)
                 return false
             }
+
+
             error?.release()
 
             test(cgFont: font!)

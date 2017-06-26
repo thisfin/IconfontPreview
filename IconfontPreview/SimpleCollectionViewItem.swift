@@ -12,6 +12,7 @@ import WYKit
 
 class SimpleCollectionViewItem: NSCollectionViewItem {
     let titleField = NSTextField()
+    var fontManager: FontManager!
 
     override func loadView() {
         view = NSView()
@@ -25,7 +26,6 @@ class SimpleCollectionViewItem: NSCollectionViewItem {
         titleField.isBordered = false
         titleField.alignment = .center
         titleField.backgroundColor = .clear
-        titleField.font = IconTool.fontOfSize(32)
         view.addSubview(titleField)
         titleField.snp.makeConstraints { (maker) in
             maker.edges.equalToSuperview()
@@ -33,6 +33,7 @@ class SimpleCollectionViewItem: NSCollectionViewItem {
     }
 
     func configData(characterInfo: CharacterInfo) {
+        titleField.font = fontManager.fontOfSize(32)
         if let charCode = UInt32(characterInfo.code, radix: 16), let unicode = UnicodeScalar(charCode) {
             titleField.stringValue = String(unicode)
         } else {
