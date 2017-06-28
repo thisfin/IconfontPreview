@@ -43,8 +43,9 @@ class FontManager {
         let ctFont: CTFont = CTFontCreateWithGraphicsFont(cgFont, 0, nil, nil) // size 默认12
         let cfCharacterSet: CFCharacterSet = CTFontCopyCharacterSet(ctFont)
         let characterSet: CharacterSet = cfCharacterSet as CharacterSet
+        /*
         let uniChars: [UniChar] = characterSet.allCharacters().map { (character) -> UniChar in
-            return UniChar(character.unicodeScalarCodePoint())
+            return UniChar(character.unicodeScalarCodePoint()) // uint32 溢出
         }
         uniChars.forEach { (uniChar) in // 字符遍历
             var cgGlyph: CGGlyph = 0
@@ -54,6 +55,26 @@ class FontManager {
             _ = CTFontGetGlyphsForCharacters(ctFont, upUniChar, umpCGGlyph, MemoryLayout<CGGlyph>.size + MemoryLayout<UniChar>.size) // 根据字符取 glyph
             if let _ = CTFontCreatePathForGlyph(ctFont, cgGlyph, nil) { // 通过 path 来过滤空白的字符
                 let code: String = String(format: "%0x", uniChar)
+                if let name: CFString = cgFont.name(for: cgGlyph) {
+                    characterInfos.append(CharacterInfo(name: (name as NSString) as String, code: code))
+                }
+            }
+        }
+        */
+        // UTF-32
+        let uint32s: [UInt32] = characterSet.allCharacters().map { (character) -> UInt32 in
+            return character.unicodeScalarCodePoint()
+        }
+        uint32s.forEach { (uint32) in // 字符遍历
+            var cgGlyph: CGGlyph = 0
+            let umpCGGlyph: UnsafeMutablePointer<CGGlyph> = withUnsafeMutablePointer(to: &cgGlyph, {$0})
+            var codePoint: [UniChar] = [
+                UniChar(truncatingBitPattern: uint32),
+                UniChar(truncatingBitPattern: uint32 >> 16)
+            ]
+            _ = CTFontGetGlyphsForCharacters(ctFont, &codePoint, umpCGGlyph, MemoryLayout<CGGlyph>.size + MemoryLayout<UniChar>.size) // 根据字符取 glyph
+            if let _ = CTFontCreatePathForGlyph(ctFont, cgGlyph, nil) { // 通过 path 来过滤空白的字符
+                let code: String = String(format: "%0x", uint32)
                 if let name: CFString = cgFont.name(for: cgGlyph) {
                     characterInfos.append(CharacterInfo(name: (name as NSString) as String, code: code))
                 }
