@@ -27,9 +27,9 @@ extension AppDelegate: NSApplicationDelegate {
                 let iconfontPreviewItem = NSMenuItem()
                 iconfontPreviewItem.submenu = {
                     let submenu = NSMenu()
-                    submenu.addItem(NSMenuItem(title: "About \(ProcessInfo.processInfo.processName)", action: #selector(NSApp.orderFrontStandardAboutPanel(_:)), keyEquivalent: ""))
+                    submenu.addItem(withTitle: "About \(ProcessInfo.processInfo.processName)", action: #selector(NSApp.orderFrontStandardAboutPanel(_:)), keyEquivalent: "")
                     submenu.addItem(NSMenuItem.separator())
-                    submenu.addItem(NSMenuItem(title: "Quit \(ProcessInfo.processInfo.processName)", action: #selector(NSApp.terminate(_:)), keyEquivalent: "q"))
+                    submenu.addItem(withTitle: "Quit \(ProcessInfo.processInfo.processName)", action: #selector(NSApp.terminate(_:)), keyEquivalent: "q")
                     return submenu
                 }()
                 return iconfontPreviewItem
@@ -38,9 +38,19 @@ extension AppDelegate: NSApplicationDelegate {
                 let menuItem = NSMenuItem()
                 menuItem.submenu = {
                     let submenu = NSMenu(title: "File")
-                    submenu.addItem(NSMenuItem(title: "Open...", action: #selector(NSDocumentController.openDocument(_:)), keyEquivalent: "o"))
+                    submenu.addItem(withTitle: "Open...", action: #selector(NSDocumentController.openDocument(_:)), keyEquivalent: "o")
+                    /*
+                    submenu.addItem({
+                        let recentMenuItem = NSMenuItem(title: "Open Recent", action: nil, keyEquivalent: "")
+                        recentMenuItem.submenu = {
+                            let recentSubmenu = NSMenu()
+                            recentSubmenu.addItem(withTitle: "Clear Menu", action: #selector(NSDocumentController.clearRecentDocuments(_:)), keyEquivalent: "")
+                            return recentSubmenu
+                        }()
+                        return recentMenuItem
+                        }())*/
                     submenu.addItem(NSMenuItem.separator())
-                    submenu.addItem(NSMenuItem(title: "Close Window", action: #selector(NSWindow.performClose(_:)), keyEquivalent: "w")) // 这个地方根据窗口变化系统会自己添加
+                    submenu.addItem(withTitle: "Close Window", action: #selector(NSWindow.performClose(_:)), keyEquivalent: "w") // 这个地方根据窗口变化系统会自己添加
                     return submenu
                 }()
                 return menuItem
