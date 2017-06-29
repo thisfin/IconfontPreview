@@ -10,40 +10,30 @@
 		30847AB21EFFB5A700C20AAE /* CharacterSet+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30847AB11EFFB5A700C20AAE /* CharacterSet+Helper.swift */; };
 		30847AB41F001C6100C20AAE /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30847AB31F001C6100C20AAE /* ShowViewController.swift */; };
 		3C55315FD0D58EF3BA71A2A0 /* Pods_IconfontPreview.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D14CDD23B878A8FD55074F0A /* Pods_IconfontPreview.framework */; };
-		660BA6E91E25DC3C008DC5C9 /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 660BA6E81E25DC3C008DC5C9 /* Preference.swift */; };
 		664521E01F00B90A006D9B6D /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664521DF1F00B90A006D9B6D /* FontManager.swift */; };
 		666084531F002DC9000D1B9C /* SimpleCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666084521F002DC9000D1B9C /* SimpleCollectionViewItem.swift */; };
-		666158841EF2223F007D650B /* FilePermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666158831EF2223F007D650B /* FilePermissions.swift */; };
 		66A9A6A81F040F1E00A2F013 /* DocumentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A9A6A71F040F1E00A2F013 /* DocumentController.swift */; };
 		66A9A6AA1F04120A00A2F013 /* TTFDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A9A6A91F04120A00A2F013 /* TTFDocument.swift */; };
+		66ADE0DF1F054F6900B3BB3B /* DragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66ADE0DE1F054F6900B3BB3B /* DragView.swift */; };
 		66B2F8FA1E20C9B5001FB418 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B2F8F91E20C9B5001FB418 /* AppDelegate.swift */; };
 		66B2F8FC1E20C9B5001FB418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66B2F8FB1E20C9B5001FB418 /* Assets.xcassets */; };
 		66B2F9071E20CA20001FB418 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B2F9061E20CA20001FB418 /* Application.swift */; };
-		66B2F90B1E20CAFA001FB418 /* FontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B2F90A1E20CAFA001FB418 /* FontViewController.swift */; };
-		66B2F9141E228C0B001FB418 /* FontScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B2F9131E228C0B001FB418 /* FontScrollView.swift */; };
-		66B2F9161E232813001FB418 /* FileSelectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B2F9151E232813001FB418 /* FileSelectedViewController.swift */; };
-		66B2F9181E238EC1001FB418 /* IconTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B2F9171E238EC1001FB418 /* IconTool.swift */; };
 		66B2F91A1E23F105001FB418 /* CharacterInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B2F9191E23F105001FB418 /* CharacterInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		30847AB11EFFB5A700C20AAE /* CharacterSet+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CharacterSet+Helper.swift"; sourceTree = "<group>"; };
 		30847AB31F001C6100C20AAE /* ShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowViewController.swift; sourceTree = "<group>"; };
-		660BA6E81E25DC3C008DC5C9 /* Preference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
 		664521DF1F00B90A006D9B6D /* FontManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
 		666084521F002DC9000D1B9C /* SimpleCollectionViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCollectionViewItem.swift; sourceTree = "<group>"; };
-		666158831EF2223F007D650B /* FilePermissions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilePermissions.swift; sourceTree = "<group>"; };
 		66A9A6A71F040F1E00A2F013 /* DocumentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentController.swift; sourceTree = "<group>"; };
 		66A9A6A91F04120A00A2F013 /* TTFDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTFDocument.swift; sourceTree = "<group>"; };
+		66ADE0DE1F054F6900B3BB3B /* DragView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragView.swift; sourceTree = "<group>"; };
 		66B2F8F61E20C9B5001FB418 /* IconfontPreview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IconfontPreview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66B2F8F91E20C9B5001FB418 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66B2F8FB1E20C9B5001FB418 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		66B2F9001E20C9B5001FB418 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66B2F9061E20CA20001FB418 /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
-		66B2F90A1E20CAFA001FB418 /* FontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontViewController.swift; sourceTree = "<group>"; };
-		66B2F9131E228C0B001FB418 /* FontScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontScrollView.swift; sourceTree = "<group>"; };
-		66B2F9151E232813001FB418 /* FileSelectedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileSelectedViewController.swift; sourceTree = "<group>"; };
-		66B2F9171E238EC1001FB418 /* IconTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconTool.swift; sourceTree = "<group>"; };
 		66B2F9191E23F105001FB418 /* CharacterInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterInfo.swift; sourceTree = "<group>"; };
 		66DB29451E34BC3500ED4C68 /* IconfontPreview.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IconfontPreview.entitlements; sourceTree = "<group>"; };
 		D14CDD23B878A8FD55074F0A /* Pods_IconfontPreview.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IconfontPreview.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,13 +90,8 @@
 				66B2F9191E23F105001FB418 /* CharacterInfo.swift */,
 				30847AB11EFFB5A700C20AAE /* CharacterSet+Helper.swift */,
 				66A9A6A71F040F1E00A2F013 /* DocumentController.swift */,
-				666158831EF2223F007D650B /* FilePermissions.swift */,
-				66B2F9151E232813001FB418 /* FileSelectedViewController.swift */,
+				66ADE0DE1F054F6900B3BB3B /* DragView.swift */,
 				664521DF1F00B90A006D9B6D /* FontManager.swift */,
-				66B2F9131E228C0B001FB418 /* FontScrollView.swift */,
-				66B2F90A1E20CAFA001FB418 /* FontViewController.swift */,
-				66B2F9171E238EC1001FB418 /* IconTool.swift */,
-				660BA6E81E25DC3C008DC5C9 /* Preference.swift */,
 				30847AB31F001C6100C20AAE /* ShowViewController.swift */,
 				666084521F002DC9000D1B9C /* SimpleCollectionViewItem.swift */,
 				66A9A6A91F04120A00A2F013 /* TTFDocument.swift */,
@@ -252,19 +237,14 @@
 			files = (
 				66B2F91A1E23F105001FB418 /* CharacterInfo.swift in Sources */,
 				66B2F9071E20CA20001FB418 /* Application.swift in Sources */,
+				66ADE0DF1F054F6900B3BB3B /* DragView.swift in Sources */,
 				66A9A6A81F040F1E00A2F013 /* DocumentController.swift in Sources */,
-				660BA6E91E25DC3C008DC5C9 /* Preference.swift in Sources */,
-				66B2F90B1E20CAFA001FB418 /* FontViewController.swift in Sources */,
 				66A9A6AA1F04120A00A2F013 /* TTFDocument.swift in Sources */,
 				30847AB41F001C6100C20AAE /* ShowViewController.swift in Sources */,
 				66B2F8FA1E20C9B5001FB418 /* AppDelegate.swift in Sources */,
-				66B2F9181E238EC1001FB418 /* IconTool.swift in Sources */,
 				30847AB21EFFB5A700C20AAE /* CharacterSet+Helper.swift in Sources */,
-				66B2F9161E232813001FB418 /* FileSelectedViewController.swift in Sources */,
 				666084531F002DC9000D1B9C /* SimpleCollectionViewItem.swift in Sources */,
 				664521E01F00B90A006D9B6D /* FontManager.swift in Sources */,
-				666158841EF2223F007D650B /* FilePermissions.swift in Sources */,
-				66B2F9141E228C0B001FB418 /* FontScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

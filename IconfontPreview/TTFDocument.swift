@@ -9,7 +9,7 @@
 import AppKit
 
 class TTFDocument: NSDocument {
-    var tempFontManager: FontManager?
+    private var tempFontManager: FontManager?
 
     override func makeWindowControllers() {
         guard let fontManager = tempFontManager else {
@@ -25,6 +25,7 @@ class TTFDocument: NSDocument {
             viewController.fontManager = fontManager
             return viewController
         }()
+        window.center()
 
         let windowController = NSWindowController(window: window)
         addWindowController(windowController)

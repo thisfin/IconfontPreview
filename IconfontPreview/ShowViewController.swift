@@ -13,7 +13,7 @@ class ShowViewController: NSViewController {
     var fontManager: FontManager!
 
     override func loadView() {
-        view = NSView()
+        view = DragView()
     }
 
     override func viewDidLoad() {
@@ -61,27 +61,6 @@ extension ShowViewController: NSCollectionViewDataSource {
 }
 
 extension ShowViewController: NSCollectionViewDelegate {
-    func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
-        NSLog("\(indexPaths)")
-//        if 0 > indexPaths.
-//        nowCharacterInfo = characterDict[indexPaths.item]
-//        if let event = NSApplication.shared().currentEvent {
-//            NSMenu.popUpContextMenu({
-//                let menu = NSMenu()
-//                menu.addItem({
-//                    let item = NSMenuItem()
-//                    item.title = "copy unicode to pasteboard"
-//                    item.target = self
-//                    item.action = #selector(FontScrollView.copyClicked(_:))
-//                    return item
-//                    }())
-//                menu.addItem(.separator())
-//                menu.addItem(withTitle: "name: \(self.nowCharacterInfo.name)", action: nil, keyEquivalent: "")
-//                menu.addItem(withTitle: "code: \(self.nowCharacterInfo.code)", action: nil, keyEquivalent: "")
-//                return menu
-//            }(), with: event, for: sender)
-//        }
-    }
 }
 
 extension ShowViewController: NSCollectionViewDelegateFlowLayout {

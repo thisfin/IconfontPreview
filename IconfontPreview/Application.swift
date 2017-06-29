@@ -9,11 +9,11 @@
 import Cocoa
 
 class Application: NSApplication { // 注册到info.plist
-    let appDelegate = AppDelegate()
+    private let appDelegate = AppDelegate()
 
     override init() {
         super.init()
-        self.delegate = appDelegate
+        delegate = appDelegate
     }
 
     required init?(coder: NSCoder) {

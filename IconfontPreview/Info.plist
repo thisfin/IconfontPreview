@@ -12,9 +12,13 @@
 				<string>ttf</string>
 			</array>
 			<key>CFBundleTypeName</key>
-			<string>TTFName</string>
+			<string>ttfName</string>
 			<key>CFBundleTypeRole</key>
 			<string>Viewer</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>public.truetype-ttf-font</string>
+			</array>
 			<key>LSTypeIsPackage</key>
 			<integer>0</integer>
 			<key>NSDocumentClass</key>
