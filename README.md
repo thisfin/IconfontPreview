@@ -4,13 +4,13 @@ iconfont文件预览
 **[Mac App Store](https://itunes.apple.com/cn/app/iconfontpreview/id1197961160)**
 
 ## 2.0 待发布
-* 去掉 css 依赖, 直接读取 ttf 获取信息
-* 程序整体重构, 架构变为 document-base
+* 去掉 css 依赖, 直接读取 ttf 获取信息
+* 程序整体重构, 架构变为 document-base
 * NSTableView -> NSCollectionView
-* 支持 Finder 中右键打开, 拖动文件到 icon 打开, 拖动文件到程序窗口打开, dock 根据历史打开
-* 菜单栏重写, 支持快捷键
+* 支持 Finder 中右键打开, 拖动文件到 icon 打开, 拖动文件到程序窗口打开, dock 根据历史打开
+* 菜单栏重写, 支持快捷键
 * 修正了由于没有配置权限 bookmake, 导致打开上次保存的地址时权限不足报错
-* 修正了 utf-32 编码解析溢出
+* 修正了 utf-32 编码解析溢出
 * [icomoon](https://icomoon.io/)
 * [material-icons](https://material.io/icons/)
 * without storyboard & xib
