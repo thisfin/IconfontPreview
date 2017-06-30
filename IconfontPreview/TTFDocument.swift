@@ -16,7 +16,7 @@ class TTFDocument: NSDocument {
             return
         }
 
-        let window = NSWindow(contentRect: CGRect(origin: .zero, size: NSMakeSize(800, 600)), styleMask: [.closable, .resizable, .miniaturizable, .titled], backing: .buffered, defer: false)
+        let window = NSWindow(contentRect: .zero, styleMask: [.closable, .resizable, .miniaturizable, .titled], backing: .buffered, defer: false)
         // window.title = fontManager.fontName // 无效
         window.minSize = NSMakeSize(400, 300)
         window.isRestorable = false

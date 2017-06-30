@@ -21,7 +21,7 @@ class ShowViewController: NSViewController {
 
         view.wantsLayer = true
         view.layer?.backgroundColor = NSColor.white.cgColor
-        view.frame = NSRect(origin: .zero, size: NSMakeSize(800, 500))
+        view.frame = NSRect(origin: .zero, size: NSMakeSize(800, 600))
 
         collectionView = NSCollectionView.init()
         collectionView.collectionViewLayout = NSCollectionViewFlowLayout()

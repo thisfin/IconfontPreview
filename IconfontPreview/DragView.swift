@@ -9,7 +9,7 @@
 import AppKit
 
 class DragView: NSView {
-    private let fileType = "ttf"
+    private let fileTypes = ["ttf"]
 
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
@@ -25,7 +25,7 @@ class DragView: NSView {
         var isMatch = false
         if let paths = sender.draggingPasteboard().propertyList(forType: NSFilenamesPboardType) as? [String] {
             paths.forEach({ (path) in
-                if fileType == (path as NSString).pathExtension.lowercased() {
+                if fileTypes.contains((path as NSString).pathExtension.lowercased()) {
                     isMatch = true
                     return
                 }
@@ -37,7 +37,7 @@ class DragView: NSView {
     override func performDragOperation(_ sender: NSDraggingInfo) -> Bool { // 循环创建
         if let paths = sender.draggingPasteboard().propertyList(forType: NSFilenamesPboardType) as? [String] {
             paths.forEach({ (path) in
-                if fileType == (path as NSString).pathExtension.lowercased() {
+                if fileTypes.contains((path as NSString).pathExtension.lowercased()) {
                     NSDocumentController.shared().openDocument(withContentsOf: URL(fileURLWithPath: path), display: true, completionHandler: { (document, b, nil) in
                     })
                 }
