@@ -1,5 +1,5 @@
 # IconfontPreview
-iconfont文件预览
+iconfont 文件预览
 
 **[Mac App Store](https://itunes.apple.com/cn/app/iconfontpreview/id1197961160)**
 

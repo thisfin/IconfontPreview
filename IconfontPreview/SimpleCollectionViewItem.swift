@@ -8,7 +8,6 @@
 
 import AppKit
 import SnapKit
-import WYKit
 
 class SimpleCollectionViewItem: NSCollectionViewItem {
     private let titleField = NSTextField()
