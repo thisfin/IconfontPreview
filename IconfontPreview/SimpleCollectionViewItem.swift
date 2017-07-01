@@ -14,7 +14,6 @@ class SimpleCollectionViewItem: NSCollectionViewItem {
     private var ci: CharacterInfo!
     var fontManager: FontManager!
 
-
     override func loadView() {
         view = EventView()
     }
