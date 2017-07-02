@@ -96,6 +96,9 @@ extension AppDelegate: NSApplicationDelegate {
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
 //        NSDocumentController.shared().openDocument(self)
 //        return false
+        if #available(OSX 10.13, *) { // 10.13 时, panel open 的时候会触发 LastWindowClosed, 正式版本出来后再观察
+            return false
+        }
         return true
     }
 
