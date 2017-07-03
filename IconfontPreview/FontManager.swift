@@ -65,7 +65,10 @@ class FontManager {
         let uint32s: [UInt32] = characterSet.allCharacters().map { (character) -> UInt32 in
             return character.unicodeScalarCodePoint()
         }
-        uint32s.forEach { (uint32) in // 字符遍历
+//        uint32s.forEach { (uint32) in // 字符遍历 这么写打包后会死循环, 我也不知道为什么
+        for i in 0 ..< uint32s.count {
+            let uint32 = uint32s[i]
+
             var cgGlyph: CGGlyph = 0
             let umpCGGlyph: UnsafeMutablePointer<CGGlyph> = withUnsafeMutablePointer(to: &cgGlyph, {$0})
             var codePoint: [UniChar] = [
