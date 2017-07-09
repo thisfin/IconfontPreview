@@ -3,7 +3,7 @@ iconfont 文件预览
 
 **[Mac App Store](https://itunes.apple.com/cn/app/iconfontpreview/id1197961160)**
 
-## 2.0 待发布
+## 2.0
 * 去掉 css 依赖, 直接读取 ttf 获取信息
 * 程序整体重构, 架构变为 document-base
 * NSTableView -> NSCollectionView
