@@ -53,10 +53,10 @@ class SimpleCollectionViewItem: NSCollectionViewItem {
         ci = characterInfo
     }
 
-    func copyClicked(_ sender: NSMenuItem) {
-        let pasteboard = NSPasteboard.general()
-        pasteboard.declareTypes([NSStringPboardType], owner: self)
-        pasteboard.setString(ci.code, forType: NSPasteboardTypeString)
+    @objc private func copyClicked(_ sender: NSMenuItem) {
+        let pasteboard = NSPasteboard.general
+        pasteboard.declareTypes([.string], owner: self)
+        pasteboard.setString(ci.code, forType: .string)
     }
 }
 

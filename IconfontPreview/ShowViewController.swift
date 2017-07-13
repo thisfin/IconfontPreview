@@ -25,7 +25,7 @@ class ShowViewController: NSViewController {
 
         collectionView = NSCollectionView.init()
         collectionView.collectionViewLayout = NSCollectionViewFlowLayout()
-        collectionView.register(SimpleCollectionViewItem.classForCoder(), forItemWithIdentifier: SimpleCollectionViewItem.className())
+        collectionView.register(SimpleCollectionViewItem.classForCoder(), forItemWithIdentifier: NSUserInterfaceItemIdentifier.init(SimpleCollectionViewItem.className()))
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.allowsMultipleSelection = false
@@ -51,7 +51,7 @@ extension ShowViewController: NSCollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-        let collectionViewItem = collectionView.makeItem(withIdentifier: SimpleCollectionViewItem.className(), for: indexPath)
+        let collectionViewItem = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: SimpleCollectionViewItem.className()), for: indexPath)
         if let item = collectionViewItem as? SimpleCollectionViewItem {
             item.fontManager = fontManager
             item.configData(characterInfo: fontManager.characterInfos[indexPath.item])

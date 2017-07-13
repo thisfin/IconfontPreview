@@ -16,7 +16,7 @@ class AppDelegate: NSObject {
 extension AppDelegate: NSApplicationDelegate {
     // 自定义的 NSDocumentController 在此初始化, 因为是单例, 之后 NSDocumentController.shared() / DocumentController.shared() 效果一样
     func applicationWillFinishLaunching(_ notification: Notification) {
-        DocumentController.shared()
+        _ = DocumentController.shared
     }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -47,7 +47,7 @@ extension AppDelegate: NSApplicationDelegate {
                 menuItem.submenu = {
                     let submenu = NSMenu(title: "File")
                     submenu.addItem(withTitle: "Open…", action: #selector(NSDocumentController.openDocument(_:)), keyEquivalent: "o")
-                    /* 这个地方不知道系统自动做了什么处理, 人肉添加的 menu 并不会动态做 recent 的增删, 以后再搞吧 
+                    /* 这个地方不知道系统自动做了什么处理, 人肉添加的 menu 并不会动态做 recent 的增删, 以后再搞吧.
                      view 和 close window 两个 menu 系统会自动做处理. 此外, 通过 storyboard 生成的 open recent submenu 会被加上 delegate, 可以通过这个跟踪下
                     submenu.addItem({
                         let recentMenuItem = NSMenuItem(title: "Open Recent", action: nil, keyEquivalent: "")
@@ -88,7 +88,7 @@ extension AppDelegate: NSApplicationDelegate {
 
         // 启动时候打开文件选择 panel
         if !hasOpenFile {
-            NSDocumentController.shared().openDocument(self)
+            NSDocumentController.shared.openDocument(self)
         }
     }
 
@@ -105,7 +105,7 @@ extension AppDelegate: NSApplicationDelegate {
     // finder 中右键打开, 执行顺序在 applicationDidFinishLaunching 前, 通过一个标志位来做空页面的传递
     func application(_ sender: NSApplication, openFile filename: String) -> Bool {
         hasOpenFile = true
-        NSDocumentController.shared().openDocument(withContentsOf: URL.init(fileURLWithPath: filename), display: true) { (document, b, nil) in
+        NSDocumentController.shared.openDocument(withContentsOf: URL.init(fileURLWithPath: filename), display: true) { (document, b, nil) in
         }
         return true
     }

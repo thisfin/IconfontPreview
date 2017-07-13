@@ -13,7 +13,7 @@ class DocumentController: NSDocumentController {
     override func beginOpenPanel(_ openPanel: NSOpenPanel, forTypes inTypes: [String]?, completionHandler: @escaping (Int) -> Swift.Void) {
         openPanel.message = "please select .ttf file"
         super.beginOpenPanel(openPanel, forTypes: inTypes) { (type) in
-            if type == NSModalResponseCancel && self.documents.count == 0 {
+            if type == NSApplication.ModalResponse.cancel.rawValue && self.documents.count == 0 {
                 NSApp.terminate(self)
             }
             completionHandler(type)
