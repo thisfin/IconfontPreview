@@ -71,8 +71,8 @@ class FontManager {
             var cgGlyph: CGGlyph = 0
             let umpCGGlyph: UnsafeMutablePointer<CGGlyph> = withUnsafeMutablePointer(to: &cgGlyph, {$0})
             var codePoint: [UniChar] = [
-                UniChar(extendingOrTruncating: uint32),
-                UniChar(extendingOrTruncating: uint32 >> 16)
+                UniChar(truncatingIfNeeded: uint32),
+                UniChar(truncatingIfNeeded: uint32 >> 16)
             ]
             _ = CTFontGetGlyphsForCharacters(ctFont, &codePoint, umpCGGlyph, MemoryLayout<CGGlyph>.size + MemoryLayout<UniChar>.size) // 根据字符取 glyph
             if let _ = CTFontCreatePathForGlyph(ctFont, cgGlyph, nil) { // 通过 path 来过滤空白的字符
