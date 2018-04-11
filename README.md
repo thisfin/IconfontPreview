@@ -1,9 +1,11 @@
 # IconfontPreview
+
 iconfont 文件预览
 
-**[Mac App Store](https://itunes.apple.com/cn/app/iconfontpreview/id1197961160)**
+__[Mac App Store](https://itunes.apple.com/cn/app/iconfontpreview/id1197961160)__
 
 ## 2.0
+
 * 去掉 css 依赖, 直接读取 ttf 获取信息
 * 程序整体重构, 架构变为 document-base
 * NSTableView -> NSCollectionView
@@ -16,6 +18,7 @@ iconfont 文件预览
 * without storyboard & xib
 
 ## 1.0.0
+
 * 预览iconfont文件
 * 点击拷贝unicode值
 * font-awesome & iconfont 已经测试通过
@@ -25,5 +28,6 @@ iconfont 文件预览
 * [iconfont](http://iconfont.cn/)
 * without storyboard & xib
 
-## todo:
+## todo
+
 * 自建的 mainmenu 里面 open recent 记录更新
