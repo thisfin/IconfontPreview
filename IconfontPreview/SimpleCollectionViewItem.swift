@@ -25,7 +25,6 @@ class SimpleCollectionViewItem: NSCollectionViewItem {
         titleField.isSelectable = false
         titleField.isBordered = false
         titleField.alignment = .center
-        titleField.backgroundColor = .clear
         view.addSubview(titleField)
         titleField.snp.makeConstraints { (maker) in
             maker.edges.equalToSuperview()
@@ -33,14 +32,14 @@ class SimpleCollectionViewItem: NSCollectionViewItem {
     }
 
     override func mouseDown(with event: NSEvent) {
-        NSMenu.popUpContextMenu({
-            let menu = NSMenu()
-            menu.addItem(withTitle: "copy unicode to pasteboard", action: #selector(SimpleCollectionViewItem.copyClicked(_:)), keyEquivalent: "")
-            menu.addItem(.separator())
-            menu.addItem(withTitle: "name: \(ci.name)", action: nil, keyEquivalent: "")
-            menu.addItem(withTitle: "code: \(ci.code)", action: nil, keyEquivalent: "")
-            return menu
-        }(), with: event, for: titleField)
+        NSMenu.popUpContextMenu(NSMenu().then {
+            $0.addItem(withTitle: "copy unicode to pasteboard", action: #selector(SimpleCollectionViewItem.copyClicked(_:)), keyEquivalent: "")
+            $0.addItem(withTitle: "copy fontName to pasteboard", action: #selector(SimpleCollectionViewItem.copyClicked1(_:)), keyEquivalent: "")
+            $0.addItem(.separator())
+            $0.addItem(withTitle: "font: \(ci.fontName)", action: nil, keyEquivalent: "")
+            $0.addItem(withTitle: "name: \(ci.name)", action: nil, keyEquivalent: "")
+            $0.addItem(withTitle: "code: \(ci.code)", action: nil, keyEquivalent: "")
+        }, with: event, for: titleField)
     }
 
     func configData(characterInfo: CharacterInfo) {
@@ -52,11 +51,19 @@ class SimpleCollectionViewItem: NSCollectionViewItem {
         }
         ci = characterInfo
     }
+}
 
-    @objc private func copyClicked(_ sender: NSMenuItem) {
+@objc extension SimpleCollectionViewItem {
+    private func copyClicked(_ sender: NSMenuItem) {
         let pasteboard = NSPasteboard.general
         pasteboard.declareTypes([.string], owner: self)
         pasteboard.setString(ci.code, forType: .string)
+    }
+
+    private func copyClicked1(_ sender: NSMenuItem) {
+        let pasteboard = NSPasteboard.general
+        pasteboard.declareTypes([.string], owner: self)
+        pasteboard.setString(ci.fontName, forType: .string)
     }
 }
 

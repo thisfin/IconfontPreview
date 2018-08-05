@@ -78,7 +78,7 @@ class FontManager {
             if let _ = CTFontCreatePathForGlyph(ctFont, cgGlyph, nil) { // 通过 path 来过滤空白的字符
                 let code: String = String(format: "%0x", uint32)
                 if let name: CFString = cgFont.name(for: cgGlyph) {
-                    characterInfos.append(CharacterInfo(name: (name as NSString) as String, code: code))
+                    characterInfos.append(CharacterInfo(name: (name as NSString) as String, code: code, fontName: fontName))
                 }
             }
         }

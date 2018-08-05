@@ -11,4 +11,5 @@ import Foundation
 struct CharacterInfo {
     var name: String
     var code: String
+    var fontName: String
 }

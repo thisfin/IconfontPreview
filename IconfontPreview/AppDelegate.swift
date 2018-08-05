@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import Then
 
 @NSApplicationMain
 class AppDelegate: NSObject {
@@ -21,70 +22,48 @@ extension AppDelegate: NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // 菜单
-        NSApp.mainMenu = {
-            let menu = NSMenu()
-            menu.addItem({
-                let iconfontPreviewItem = NSMenuItem()
-                iconfontPreviewItem.submenu = {
-                    let submenu = NSMenu()
-                    submenu.addItem(withTitle: "About \(ProcessInfo.processInfo.processName)", action: #selector(NSApp.orderFrontStandardAboutPanel(_:)), keyEquivalent: "")
-                    submenu.addItem(NSMenuItem.separator())
-                    submenu.addItem(withTitle: "Hide \(ProcessInfo.processInfo.processName)", action: #selector(NSApp.hide(_:)), keyEquivalent: "h")
-                    submenu.addItem({
-                        let menuItem = NSMenuItem(title: "Hide Others", action: #selector(NSApp.hideOtherApplications(_:)), keyEquivalent: "h")
-                        menuItem.keyEquivalentModifierMask = [.command, .option]
-                        return menuItem
-                    }())
-                    submenu.addItem(withTitle: "Show All", action: #selector(NSApp.unhideWithoutActivation), keyEquivalent: "")
-                    submenu.addItem(NSMenuItem.separator())
-                    submenu.addItem(withTitle: "Quit \(ProcessInfo.processInfo.processName)", action: #selector(NSApp.terminate(_:)), keyEquivalent: "q")
-                    return submenu
-                }()
-                return iconfontPreviewItem
-                }())
-            menu.addItem({
-                let menuItem = NSMenuItem()
-                menuItem.submenu = {
-                    let submenu = NSMenu(title: "File")
-                    submenu.addItem(withTitle: "Open…", action: #selector(NSDocumentController.openDocument(_:)), keyEquivalent: "o")
+        NSApp.mainMenu = NSMenu().then {
+            $0.addItem(NSMenuItem().then {
+                $0.submenu = NSMenu().then {
+                    $0.addItem(withTitle: "About \(ProcessInfo.processInfo.processName)", action: #selector(NSApp.orderFrontStandardAboutPanel(_:)), keyEquivalent: "")
+                    $0.addItem(NSMenuItem.separator())
+                    $0.addItem(withTitle: "Hide \(ProcessInfo.processInfo.processName)", action: #selector(NSApp.hide(_:)), keyEquivalent: "h")
+                    $0.addItem(NSMenuItem(title: "Hide Others", action: #selector(NSApp.hideOtherApplications(_:)), keyEquivalent: "h").then {
+                        $0.keyEquivalentModifierMask = [.command, .option]
+                    })
+                    $0.addItem(withTitle: "Show All", action: #selector(NSApp.unhideWithoutActivation), keyEquivalent: "")
+                    $0.addItem(NSMenuItem.separator())
+                    $0.addItem(withTitle: "Quit \(ProcessInfo.processInfo.processName)", action: #selector(NSApp.terminate(_:)), keyEquivalent: "q")
+                }
+            })
+            $0.addItem(NSMenuItem().then {
+                $0.submenu = NSMenu(title: "File").then {
+                    $0.addItem(withTitle: "Open…", action: #selector(NSDocumentController.openDocument(_:)), keyEquivalent: "o")
                     /* 这个地方不知道系统自动做了什么处理, 人肉添加的 menu 并不会动态做 recent 的增删, 以后再搞吧.
-                     view 和 close window 两个 menu 系统会自动做处理. 此外, 通过 storyboard 生成的 open recent submenu 会被加上 delegate, 可以通过这个跟踪下
-                    submenu.addItem({
-                        let recentMenuItem = NSMenuItem(title: "Open Recent", action: nil, keyEquivalent: "")
-                        recentMenuItem.submenu = {
-                            let recentSubmenu = NSMenu()
-                            recentSubmenu.addItem(withTitle: "Clear Menu", action: #selector(NSDocumentController.clearRecentDocuments(_:)), keyEquivalent: "")
-                            return recentSubmenu
-                        }()
-                        return recentMenuItem
-                        }())*/
-                    submenu.addItem(NSMenuItem.separator())
-                    submenu.addItem(withTitle: "Close Window", action: #selector(NSWindow.performClose(_:)), keyEquivalent: "w") // 这个地方根据窗口变化系统会自己添加
-                    return submenu
-                }()
-                return menuItem
-                }())
-            menu.addItem({
-                let menuItem = NSMenuItem()
-                menuItem.submenu = NSMenu(title: "View")
-                return menuItem
-                }())
-            menu.addItem({
-                let menuItem = NSMenuItem()
-                menuItem.submenu = {
-                    let submenu = NSMenu(title: "Window")
-                    submenu.addItem(withTitle: "Minimize", action: #selector(NSWindow.performMiniaturize(_:)), keyEquivalent: "m")
-                    submenu.addItem(withTitle: "Zoom", action: #selector(NSWindow.performZoom(_:)), keyEquivalent: "")
-                    submenu.addItem(NSMenuItem.separator())
-                    submenu.addItem(withTitle: "Merge All Windows", action: #selector(NSWindow.mergeAllWindows(_:)), keyEquivalent: "")
-                    submenu.addItem(NSMenuItem.separator())
-                    submenu.addItem(withTitle: "Bring All to Front", action: #selector(NSApp.arrangeInFront(_:)), keyEquivalent: "")
-                    return submenu
-                }()
-                return menuItem
-                }())
-            return menu
-        }()
+                    view 和 close window 两个 menu 系统会自动做处理. 此外, 通过 storyboard 生成的 open recent submenu 会被加上 delegate, 可以通过这个跟踪下
+                    $0.addItem(NSMenuItem(title: "Open Recent", action: nil, keyEquivalent: "").then {
+                        $0.submenu = NSMenu().then {
+                            $0.addItem(withTitle: "Clear Menu", action: #selector(NSDocumentController.clearRecentDocuments(_:)), keyEquivalent: "")
+                        }
+                    })*/
+                    $0.addItem(NSMenuItem.separator())
+                    $0.addItem(withTitle: "Close Window", action: #selector(NSWindow.performClose(_:)), keyEquivalent: "w") // 这个地方根据窗口变化系统会自己添加
+                }
+            })
+            $0.addItem(NSMenuItem().then {
+                $0.submenu = NSMenu(title: "View")
+            })
+            $0.addItem(NSMenuItem().then {
+                $0.submenu = NSMenu(title: "Window").then {
+                    $0.addItem(withTitle: "Minimize", action: #selector(NSWindow.performMiniaturize(_:)), keyEquivalent: "m")
+                    $0.addItem(withTitle: "Zoom", action: #selector(NSWindow.performZoom(_:)), keyEquivalent: "")
+                    $0.addItem(NSMenuItem.separator())
+                    $0.addItem(withTitle: "Merge All Windows", action: #selector(NSWindow.mergeAllWindows(_:)), keyEquivalent: "")
+                    $0.addItem(NSMenuItem.separator())
+                    $0.addItem(withTitle: "Bring All to Front", action: #selector(NSApp.arrangeInFront(_:)), keyEquivalent: "")
+                }
+            })
+        }
 
         // 启动时候打开文件选择 panel
         if !hasOpenFile {

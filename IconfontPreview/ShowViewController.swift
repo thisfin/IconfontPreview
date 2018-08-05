@@ -20,18 +20,17 @@ class ShowViewController: NSViewController {
         super.viewDidLoad()
 
         view.wantsLayer = true
-        view.layer?.backgroundColor = NSColor.white.cgColor
         view.frame = NSRect(origin: .zero, size: NSMakeSize(800, 600))
 
-        collectionView = NSCollectionView.init()
-        collectionView.collectionViewLayout = NSCollectionViewFlowLayout()
-        collectionView.register(SimpleCollectionViewItem.classForCoder(), forItemWithIdentifier: NSUserInterfaceItemIdentifier.init(SimpleCollectionViewItem.className()))
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.allowsMultipleSelection = false
+        collectionView = NSCollectionView().then {
+            $0.collectionViewLayout = NSCollectionViewFlowLayout()
+            $0.register(SimpleCollectionViewItem.classForCoder(), forItemWithIdentifier: NSUserInterfaceItemIdentifier.init(SimpleCollectionViewItem.className()))
+            $0.dataSource = self
+            $0.delegate = self
+            $0.allowsMultipleSelection = false
+        }
 
         let scrollView = NSScrollView()
-        scrollView.backgroundColor = .red
         view.addSubview(scrollView)
         scrollView.snp.makeConstraints { (maker) in
             maker.edges.equalToSuperview()

@@ -7,6 +7,7 @@
 //
 
 import AppKit
+import Then
 
 class TTFDocument: NSDocument {
     private var tempFontManager: FontManager?
@@ -16,20 +17,18 @@ class TTFDocument: NSDocument {
             return
         }
 
-        let window = NSWindow(contentRect: .zero, styleMask: [.closable, .resizable, .miniaturizable, .titled], backing: .buffered, defer: false)
-        // window.title = fontManager.fontName // 无效
-        window.minSize = NSMakeSize(400, 300)
-        window.isRestorable = false
-        window.contentViewController = {
-            let viewController = ShowViewController()
-            viewController.fontManager = fontManager
-            return viewController
-        }()
-        window.center()
+        let window = NSWindow(contentRect: .zero, styleMask: [.closable, .resizable, .miniaturizable, .titled], backing: .buffered, defer: false).then {
+            $0.minSize = NSMakeSize(400, 300)
+            $0.isRestorable = false
+            $0.contentViewController = ShowViewController().then {
+                $0.fontManager = fontManager
+            }
+            $0.center()
+        }
 
-        let windowController = NSWindowController(window: window)
-        addWindowController(windowController)
-        displayName = fontManager.fontName
+        addWindowController(WindowController(window: window).then {
+            $0.titleName = fontManager.fontName
+        })
     }
 
     // 写文件时用

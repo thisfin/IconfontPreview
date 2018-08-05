@@ -11,6 +11,7 @@
 		30847AB41F001C6100C20AAE /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30847AB31F001C6100C20AAE /* ShowViewController.swift */; };
 		3C55315FD0D58EF3BA71A2A0 /* Pods_IconfontPreview.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D14CDD23B878A8FD55074F0A /* Pods_IconfontPreview.framework */; };
 		664521E01F00B90A006D9B6D /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664521DF1F00B90A006D9B6D /* FontManager.swift */; };
+		6653D53D21171F93006D99FE /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6653D53C21171F93006D99FE /* WindowController.swift */; };
 		666084531F002DC9000D1B9C /* SimpleCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666084521F002DC9000D1B9C /* SimpleCollectionViewItem.swift */; };
 		66A9A6A81F040F1E00A2F013 /* DocumentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A9A6A71F040F1E00A2F013 /* DocumentController.swift */; };
 		66A9A6AA1F04120A00A2F013 /* TTFDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A9A6A91F04120A00A2F013 /* TTFDocument.swift */; };
@@ -25,6 +26,7 @@
 		30847AB11EFFB5A700C20AAE /* CharacterSet+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CharacterSet+Helper.swift"; sourceTree = "<group>"; };
 		30847AB31F001C6100C20AAE /* ShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowViewController.swift; sourceTree = "<group>"; };
 		664521DF1F00B90A006D9B6D /* FontManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
+		6653D53C21171F93006D99FE /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		666084521F002DC9000D1B9C /* SimpleCollectionViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCollectionViewItem.swift; sourceTree = "<group>"; };
 		66A9A6A71F040F1E00A2F013 /* DocumentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentController.swift; sourceTree = "<group>"; };
 		66A9A6A91F04120A00A2F013 /* TTFDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTFDocument.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				30847AB31F001C6100C20AAE /* ShowViewController.swift */,
 				666084521F002DC9000D1B9C /* SimpleCollectionViewItem.swift */,
 				66A9A6A91F04120A00A2F013 /* TTFDocument.swift */,
+				6653D53C21171F93006D99FE /* WindowController.swift */,
 				66B2F8FB1E20C9B5001FB418 /* Assets.xcassets */,
 			);
 			path = IconfontPreview;
@@ -120,7 +123,6 @@
 				66B2F8F31E20C9B5001FB418 /* Frameworks */,
 				66B2F8F41E20C9B5001FB418 /* Resources */,
 				5FAF101D25100D8928871CC9 /* [CP] Embed Pods Frameworks */,
-				F617783E94ED7CFDA2370E1D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -138,7 +140,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = wenyou;
 				TargetAttributes = {
 					66B2F8F51E20C9B5001FB418 = {
@@ -190,28 +192,18 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-IconfontPreview/Pods-IconfontPreview-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Then/Then.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Then.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IconfontPreview/Pods-IconfontPreview-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F617783E94ED7CFDA2370E1D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IconfontPreview/Pods-IconfontPreview-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FE4515D500765D1E3912085C /* [CP] Check Pods Manifest.lock */ = {
@@ -220,13 +212,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IconfontPreview-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -243,6 +238,7 @@
 				66A9A6AA1F04120A00A2F013 /* TTFDocument.swift in Sources */,
 				30847AB41F001C6100C20AAE /* ShowViewController.swift in Sources */,
 				66B2F8FA1E20C9B5001FB418 /* AppDelegate.swift in Sources */,
+				6653D53D21171F93006D99FE /* WindowController.swift in Sources */,
 				30847AB21EFFB5A700C20AAE /* CharacterSet+Helper.swift in Sources */,
 				666084531F002DC9000D1B9C /* SimpleCollectionViewItem.swift in Sources */,
 				664521E01F00B90A006D9B6D /* FontManager.swift in Sources */,
@@ -265,6 +261,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -272,6 +269,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -322,6 +320,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -329,6 +328,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -374,7 +374,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -394,7 +394,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
