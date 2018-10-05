@@ -25,6 +25,7 @@ class SimpleCollectionViewItem: NSCollectionViewItem {
         titleField.isSelectable = false
         titleField.isBordered = false
         titleField.alignment = .center
+        titleField.backgroundColor = .clear
         view.addSubview(titleField)
         titleField.snp.makeConstraints { (maker) in
             maker.edges.equalToSuperview()
