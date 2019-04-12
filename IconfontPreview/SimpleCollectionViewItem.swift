@@ -27,7 +27,7 @@ class SimpleCollectionViewItem: NSCollectionViewItem {
         titleField.alignment = .center
         titleField.backgroundColor = .clear
         view.addSubview(titleField)
-        titleField.snp.makeConstraints { (maker) in
+        titleField.snp.makeConstraints { maker in
             maker.edges.equalToSuperview()
         }
     }
@@ -70,7 +70,7 @@ class SimpleCollectionViewItem: NSCollectionViewItem {
 
 class EventView: NSView { // 禁止 subview 上的事件
     override func hitTest(_ point: NSPoint) -> NSView? {
-        if NSPointInRect(point, convert(self.bounds, to: superview)) {
+        if NSPointInRect(point, convert(bounds, to: superview)) {
             return self
         }
         return nil

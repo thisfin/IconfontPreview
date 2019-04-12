@@ -43,23 +43,23 @@ class FontManager {
         let cfCharacterSet: CFCharacterSet = CTFontCopyCharacterSet(ctFont)
         let characterSet: CharacterSet = cfCharacterSet as CharacterSet
         /*
-        let uniChars: [UniChar] = characterSet.allCharacters().map { (character) -> UniChar in
-            return UniChar(character.unicodeScalarCodePoint()) // uint32 溢出
-        }
-        uniChars.forEach { (uniChar) in // 字符遍历
-            var cgGlyph: CGGlyph = 0
-            let umpCGGlyph: UnsafeMutablePointer<CGGlyph> = withUnsafeMutablePointer(to: &cgGlyph, {$0})
-            var temp = uniChar
-            let upUniChar: UnsafePointer<UniChar> = withUnsafePointer(to: &temp, {$0})
-            _ = CTFontGetGlyphsForCharacters(ctFont, upUniChar, umpCGGlyph, MemoryLayout<CGGlyph>.size + MemoryLayout<UniChar>.size) // 根据字符取 glyph
-            if let _ = CTFontCreatePathForGlyph(ctFont, cgGlyph, nil) { // 通过 path 来过滤空白的字符
-                let code: String = String(format: "%0x", uniChar)
-                if let name: CFString = cgFont.name(for: cgGlyph) {
-                    characterInfos.append(CharacterInfo(name: (name as NSString) as String, code: code))
-                }
-            }
-        }
-        */
+         let uniChars: [UniChar] = characterSet.allCharacters().map { (character) -> UniChar in
+         return UniChar(character.unicodeScalarCodePoint()) // uint32 溢出
+         }
+         uniChars.forEach { (uniChar) in // 字符遍历
+         var cgGlyph: CGGlyph = 0
+         let umpCGGlyph: UnsafeMutablePointer<CGGlyph> = withUnsafeMutablePointer(to: &cgGlyph, {$0})
+         var temp = uniChar
+         let upUniChar: UnsafePointer<UniChar> = withUnsafePointer(to: &temp, {$0})
+         _ = CTFontGetGlyphsForCharacters(ctFont, upUniChar, umpCGGlyph, MemoryLayout<CGGlyph>.size + MemoryLayout<UniChar>.size) // 根据字符取 glyph
+         if let _ = CTFontCreatePathForGlyph(ctFont, cgGlyph, nil) { // 通过 path 来过滤空白的字符
+         let code: String = String(format: "%0x", uniChar)
+         if let name: CFString = cgFont.name(for: cgGlyph) {
+         characterInfos.append(CharacterInfo(name: (name as NSString) as String, code: code))
+         }
+         }
+         }
+         */
         // UTF-32
         let uint32s: [UInt32] = characterSet.allCharacters().map { (character) -> UInt32 in
             return character.unicodeScalarCodePoint()
@@ -69,10 +69,10 @@ class FontManager {
             let uint32 = uint32s[i]
 
             var cgGlyph: CGGlyph = 0
-            let umpCGGlyph: UnsafeMutablePointer<CGGlyph> = withUnsafeMutablePointer(to: &cgGlyph, {$0})
+            let umpCGGlyph: UnsafeMutablePointer<CGGlyph> = withUnsafeMutablePointer(to: &cgGlyph, { $0 })
             var codePoint: [UniChar] = [
                 UniChar(truncatingIfNeeded: uint32),
-                UniChar(truncatingIfNeeded: uint32 >> 16)
+                UniChar(truncatingIfNeeded: uint32 >> 16),
             ]
             _ = CTFontGetGlyphsForCharacters(ctFont, &codePoint, umpCGGlyph, MemoryLayout<CGGlyph>.size + MemoryLayout<UniChar>.size) // 根据字符取 glyph
             if let _ = CTFontCreatePathForGlyph(ctFont, cgGlyph, nil) { // 通过 path 来过滤空白的字符

@@ -40,12 +40,12 @@ extension AppDelegate: NSApplicationDelegate {
                 $0.submenu = NSMenu(title: "File").then {
                     $0.addItem(withTitle: "Open…", action: #selector(NSDocumentController.openDocument(_:)), keyEquivalent: "o")
                     /* 这个地方不知道系统自动做了什么处理, 人肉添加的 menu 并不会动态做 recent 的增删, 以后再搞吧.
-                    view 和 close window 两个 menu 系统会自动做处理. 此外, 通过 storyboard 生成的 open recent submenu 会被加上 delegate, 可以通过这个跟踪下
-                    $0.addItem(NSMenuItem(title: "Open Recent", action: nil, keyEquivalent: "").then {
-                        $0.submenu = NSMenu().then {
-                            $0.addItem(withTitle: "Clear Menu", action: #selector(NSDocumentController.clearRecentDocuments(_:)), keyEquivalent: "")
-                        }
-                    })*/
+                     view 和 close window 两个 menu 系统会自动做处理. 此外, 通过 storyboard 生成的 open recent submenu 会被加上 delegate, 可以通过这个跟踪下
+                     $0.addItem(NSMenuItem(title: "Open Recent", action: nil, keyEquivalent: "").then {
+                     $0.submenu = NSMenu().then {
+                     $0.addItem(withTitle: "Clear Menu", action: #selector(NSDocumentController.clearRecentDocuments(_:)), keyEquivalent: "")
+                     }
+                     })*/
                     $0.addItem(NSMenuItem.separator())
                     $0.addItem(withTitle: "Close Window", action: #selector(NSWindow.performClose(_:)), keyEquivalent: "w") // 这个地方根据窗口变化系统会自己添加
                 }
@@ -84,7 +84,7 @@ extension AppDelegate: NSApplicationDelegate {
     // finder 中右键打开, 执行顺序在 applicationDidFinishLaunching 前, 通过一个标志位来做空页面的传递
     func application(_ sender: NSApplication, openFile filename: String) -> Bool {
         hasOpenFile = true
-        NSDocumentController.shared.openDocument(withContentsOf: URL.init(fileURLWithPath: filename), display: true) { (document, b, nil) in
+        NSDocumentController.shared.openDocument(withContentsOf: URL(fileURLWithPath: filename), display: true) { _, _, _ in
         }
         return true
     }

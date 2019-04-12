@@ -24,7 +24,7 @@ class ShowViewController: NSViewController {
 
         collectionView = NSCollectionView().then {
             $0.collectionViewLayout = NSCollectionViewFlowLayout()
-            $0.register(SimpleCollectionViewItem.classForCoder(), forItemWithIdentifier: NSUserInterfaceItemIdentifier.init(SimpleCollectionViewItem.className()))
+            $0.register(SimpleCollectionViewItem.classForCoder(), forItemWithIdentifier: NSUserInterfaceItemIdentifier(SimpleCollectionViewItem.className()))
             $0.dataSource = self
             $0.delegate = self
             $0.allowsMultipleSelection = false
@@ -32,7 +32,7 @@ class ShowViewController: NSViewController {
 
         let scrollView = NSScrollView()
         view.addSubview(scrollView)
-        scrollView.snp.makeConstraints { (maker) in
+        scrollView.snp.makeConstraints { maker in
             maker.edges.equalToSuperview()
         }
         scrollView.contentView.documentView = collectionView

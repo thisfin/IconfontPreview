@@ -16,6 +16,6 @@ class WindowController: NSWindowController {
     }
 
     override func windowTitle(forDocumentDisplayName displayName: String) -> String {
-        return self.titleName ?? ""
+        return titleName ?? ""
     }
 }

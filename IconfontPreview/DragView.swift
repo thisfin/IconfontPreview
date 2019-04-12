@@ -25,7 +25,7 @@ class DragView: NSView {
     override func draggingEntered(_ sender: NSDraggingInfo) -> NSDragOperation { // 根据文件类型做判断
         var isMatch = false
         if let paths = sender.draggingPasteboard.propertyList(forType: pasteboardType) as? [String] {
-            paths.forEach({ (path) in
+            paths.forEach({ path in
                 if fileTypes.contains((path as NSString).pathExtension.lowercased()) {
                     isMatch = true
                     return
@@ -37,9 +37,9 @@ class DragView: NSView {
 
     override func performDragOperation(_ sender: NSDraggingInfo) -> Bool { // 循环创建
         if let paths = sender.draggingPasteboard.propertyList(forType: pasteboardType) as? [String] {
-            paths.forEach({ (path) in
+            paths.forEach({ path in
                 if fileTypes.contains((path as NSString).pathExtension.lowercased()) {
-                    NSDocumentController.shared.openDocument(withContentsOf: URL(fileURLWithPath: path), display: true, completionHandler: { (document, b, nil) in
+                    NSDocumentController.shared.openDocument(withContentsOf: URL(fileURLWithPath: path), display: true, completionHandler: { _, _, _ in
                     })
                 }
             })
