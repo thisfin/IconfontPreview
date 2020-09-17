@@ -3,261 +3,262 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		30847AB21EFFB5A700C20AAE /* CharacterSet+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30847AB11EFFB5A700C20AAE /* CharacterSet+Helper.swift */; };
-		30847AB41F001C6100C20AAE /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30847AB31F001C6100C20AAE /* ShowViewController.swift */; };
-		3C55315FD0D58EF3BA71A2A0 /* Pods_IconfontPreview.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D14CDD23B878A8FD55074F0A /* Pods_IconfontPreview.framework */; };
-		664521E01F00B90A006D9B6D /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664521DF1F00B90A006D9B6D /* FontManager.swift */; };
-		6653D53D21171F93006D99FE /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6653D53C21171F93006D99FE /* WindowController.swift */; };
-		666084531F002DC9000D1B9C /* SimpleCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666084521F002DC9000D1B9C /* SimpleCollectionViewItem.swift */; };
-		66A9A6A81F040F1E00A2F013 /* DocumentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A9A6A71F040F1E00A2F013 /* DocumentController.swift */; };
-		66A9A6AA1F04120A00A2F013 /* TTFDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A9A6A91F04120A00A2F013 /* TTFDocument.swift */; };
-		66ADE0DF1F054F6900B3BB3B /* DragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66ADE0DE1F054F6900B3BB3B /* DragView.swift */; };
-		66B2F8FA1E20C9B5001FB418 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B2F8F91E20C9B5001FB418 /* AppDelegate.swift */; };
-		66B2F8FC1E20C9B5001FB418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66B2F8FB1E20C9B5001FB418 /* Assets.xcassets */; };
-		66B2F9071E20CA20001FB418 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B2F9061E20CA20001FB418 /* Application.swift */; };
-		66B2F91A1E23F105001FB418 /* CharacterInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B2F9191E23F105001FB418 /* CharacterInfo.swift */; };
+		6661927A2512249A0021F6D8 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 666192792512249A0021F6D8 /* Then */; };
+		6661927E2512333B0021F6D8 /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6661927D2512333B0021F6D8 /* FontManager.swift */; };
+		6661927F2512333B0021F6D8 /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6661927D2512333B0021F6D8 /* FontManager.swift */; };
+		666192852512344C0021F6D8 /* CharacterInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666192842512344C0021F6D8 /* CharacterInfo.swift */; };
+		666192862512344C0021F6D8 /* CharacterInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666192842512344C0021F6D8 /* CharacterInfo.swift */; };
+		6661928A251234850021F6D8 /* CharacterSet+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66619289251234850021F6D8 /* CharacterSet+Ext.swift */; };
+		6661928B251234850021F6D8 /* CharacterSet+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66619289251234850021F6D8 /* CharacterSet+Ext.swift */; };
+		66982A1424C875E6006C2B19 /* IconfontPreviewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66982A0024C875E5006C2B19 /* IconfontPreviewApp.swift */; };
+		66982A1524C875E6006C2B19 /* IconfontPreviewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66982A0024C875E5006C2B19 /* IconfontPreviewApp.swift */; };
+		66982A1624C875E6006C2B19 /* IconfontPreviewDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66982A0124C875E5006C2B19 /* IconfontPreviewDocument.swift */; };
+		66982A1724C875E6006C2B19 /* IconfontPreviewDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66982A0124C875E5006C2B19 /* IconfontPreviewDocument.swift */; };
+		66982A1824C875E6006C2B19 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66982A0224C875E5006C2B19 /* ContentView.swift */; };
+		66982A1924C875E6006C2B19 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66982A0224C875E5006C2B19 /* ContentView.swift */; };
+		66982A1A24C875E6006C2B19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66982A0324C875E6006C2B19 /* Assets.xcassets */; };
+		66982A1B24C875E6006C2B19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66982A0324C875E6006C2B19 /* Assets.xcassets */; };
+		66C3CD642513670B0008A791 /* Character+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C3CD632513670B0008A791 /* Character+Ext.swift */; };
+		66C3CD652513670B0008A791 /* Character+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C3CD632513670B0008A791 /* Character+Ext.swift */; };
+		66C3CD6B251367350008A791 /* UTType+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C3CD6A251367350008A791 /* UTType+Ext.swift */; };
+		66C3CD6C251367350008A791 /* UTType+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C3CD6A251367350008A791 /* UTType+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		30847AB11EFFB5A700C20AAE /* CharacterSet+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CharacterSet+Helper.swift"; sourceTree = "<group>"; };
-		30847AB31F001C6100C20AAE /* ShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowViewController.swift; sourceTree = "<group>"; };
-		664521DF1F00B90A006D9B6D /* FontManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
-		6653D53C21171F93006D99FE /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
-		666084521F002DC9000D1B9C /* SimpleCollectionViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCollectionViewItem.swift; sourceTree = "<group>"; };
-		66A9A6A71F040F1E00A2F013 /* DocumentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentController.swift; sourceTree = "<group>"; };
-		66A9A6A91F04120A00A2F013 /* TTFDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTFDocument.swift; sourceTree = "<group>"; };
-		66ADE0DE1F054F6900B3BB3B /* DragView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragView.swift; sourceTree = "<group>"; };
-		66B2F8F61E20C9B5001FB418 /* IconfontPreview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IconfontPreview.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		66B2F8F91E20C9B5001FB418 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		66B2F8FB1E20C9B5001FB418 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		66B2F9001E20C9B5001FB418 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		66B2F9061E20CA20001FB418 /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
-		66B2F9191E23F105001FB418 /* CharacterInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterInfo.swift; sourceTree = "<group>"; };
-		66DB29451E34BC3500ED4C68 /* IconfontPreview.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IconfontPreview.entitlements; sourceTree = "<group>"; };
-		D14CDD23B878A8FD55074F0A /* Pods_IconfontPreview.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IconfontPreview.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F70853ABF149999436E4BDBA /* Pods-IconfontPreview.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IconfontPreview.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IconfontPreview/Pods-IconfontPreview.debug.xcconfig"; sourceTree = "<group>"; };
-		FD8F43741293890A349ECB3B /* Pods-IconfontPreview.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IconfontPreview.release.xcconfig"; path = "Pods/Target Support Files/Pods-IconfontPreview/Pods-IconfontPreview.release.xcconfig"; sourceTree = "<group>"; };
+		6661927D2512333B0021F6D8 /* FontManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
+		666192842512344C0021F6D8 /* CharacterInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterInfo.swift; sourceTree = "<group>"; };
+		66619289251234850021F6D8 /* CharacterSet+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CharacterSet+Ext.swift"; sourceTree = "<group>"; };
+		66982A0024C875E5006C2B19 /* IconfontPreviewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconfontPreviewApp.swift; sourceTree = "<group>"; };
+		66982A0124C875E5006C2B19 /* IconfontPreviewDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconfontPreviewDocument.swift; sourceTree = "<group>"; };
+		66982A0224C875E5006C2B19 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		66982A0324C875E6006C2B19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		66982A0824C875E6006C2B19 /* IconfontPreview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IconfontPreview.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		66982A0B24C875E6006C2B19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66982A1024C875E6006C2B19 /* IconfontPreview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IconfontPreview.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		66982A1224C875E6006C2B19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66982A1324C875E6006C2B19 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		66C3CD632513670B0008A791 /* Character+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Character+Ext.swift"; sourceTree = "<group>"; };
+		66C3CD6A251367350008A791 /* UTType+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UTType+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		66B2F8F31E20C9B5001FB418 /* Frameworks */ = {
+		66982A0524C875E6006C2B19 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C55315FD0D58EF3BA71A2A0 /* Pods_IconfontPreview.framework in Frameworks */,
+				6661927A2512249A0021F6D8 /* Then in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66982A0D24C875E6006C2B19 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1DEC5B740EA16FA34A403C4E /* Pods */ = {
+		669829FA24C875E5006C2B19 = {
 			isa = PBXGroup;
 			children = (
-				F70853ABF149999436E4BDBA /* Pods-IconfontPreview.debug.xcconfig */,
-				FD8F43741293890A349ECB3B /* Pods-IconfontPreview.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		66B2F8ED1E20C9B5001FB418 = {
-			isa = PBXGroup;
-			children = (
-				66B2F8F81E20C9B5001FB418 /* IconfontPreview */,
-				66B2F8F71E20C9B5001FB418 /* Products */,
-				1DEC5B740EA16FA34A403C4E /* Pods */,
-				C6B51FD5D8CCED058BCE7EDF /* Frameworks */,
+				669829FF24C875E5006C2B19 /* Shared */,
+				66982A0A24C875E6006C2B19 /* iOS */,
+				66982A1124C875E6006C2B19 /* macOS */,
+				66982A0924C875E6006C2B19 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		66B2F8F71E20C9B5001FB418 /* Products */ = {
+		669829FF24C875E5006C2B19 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				66B2F8F61E20C9B5001FB418 /* IconfontPreview.app */,
+				66C3CD632513670B0008A791 /* Character+Ext.swift */,
+				666192842512344C0021F6D8 /* CharacterInfo.swift */,
+				66619289251234850021F6D8 /* CharacterSet+Ext.swift */,
+				66982A0224C875E5006C2B19 /* ContentView.swift */,
+				6661927D2512333B0021F6D8 /* FontManager.swift */,
+				66982A0024C875E5006C2B19 /* IconfontPreviewApp.swift */,
+				66982A0124C875E5006C2B19 /* IconfontPreviewDocument.swift */,
+				66C3CD6A251367350008A791 /* UTType+Ext.swift */,
+				66982A0324C875E6006C2B19 /* Assets.xcassets */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		66982A0924C875E6006C2B19 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				66982A0824C875E6006C2B19 /* IconfontPreview.app */,
+				66982A1024C875E6006C2B19 /* IconfontPreview.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		66B2F8F81E20C9B5001FB418 /* IconfontPreview */ = {
+		66982A0A24C875E6006C2B19 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				66DB29451E34BC3500ED4C68 /* IconfontPreview.entitlements */,
-				66B2F9001E20C9B5001FB418 /* Info.plist */,
-				66B2F8F91E20C9B5001FB418 /* AppDelegate.swift */,
-				66B2F9061E20CA20001FB418 /* Application.swift */,
-				66B2F9191E23F105001FB418 /* CharacterInfo.swift */,
-				30847AB11EFFB5A700C20AAE /* CharacterSet+Helper.swift */,
-				66A9A6A71F040F1E00A2F013 /* DocumentController.swift */,
-				66ADE0DE1F054F6900B3BB3B /* DragView.swift */,
-				664521DF1F00B90A006D9B6D /* FontManager.swift */,
-				30847AB31F001C6100C20AAE /* ShowViewController.swift */,
-				666084521F002DC9000D1B9C /* SimpleCollectionViewItem.swift */,
-				66A9A6A91F04120A00A2F013 /* TTFDocument.swift */,
-				6653D53C21171F93006D99FE /* WindowController.swift */,
-				66B2F8FB1E20C9B5001FB418 /* Assets.xcassets */,
+				66982A0B24C875E6006C2B19 /* Info.plist */,
 			);
-			path = IconfontPreview;
+			path = iOS;
 			sourceTree = "<group>";
 		};
-		C6B51FD5D8CCED058BCE7EDF /* Frameworks */ = {
+		66982A1124C875E6006C2B19 /* macOS */ = {
 			isa = PBXGroup;
 			children = (
-				D14CDD23B878A8FD55074F0A /* Pods_IconfontPreview.framework */,
+				66982A1224C875E6006C2B19 /* Info.plist */,
+				66982A1324C875E6006C2B19 /* macOS.entitlements */,
 			);
-			name = Frameworks;
+			path = macOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		66B2F8F51E20C9B5001FB418 /* IconfontPreview */ = {
+		66982A0724C875E6006C2B19 /* IconfontPreview (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 66B2F9031E20C9B5001FB418 /* Build configuration list for PBXNativeTarget "IconfontPreview" */;
+			buildConfigurationList = 66982A1E24C875E6006C2B19 /* Build configuration list for PBXNativeTarget "IconfontPreview (iOS)" */;
 			buildPhases = (
-				FE4515D500765D1E3912085C /* [CP] Check Pods Manifest.lock */,
-				66B2F8F21E20C9B5001FB418 /* Sources */,
-				66B2F8F31E20C9B5001FB418 /* Frameworks */,
-				66B2F8F41E20C9B5001FB418 /* Resources */,
-				5FAF101D25100D8928871CC9 /* [CP] Embed Pods Frameworks */,
+				66982A0424C875E6006C2B19 /* Sources */,
+				66982A0524C875E6006C2B19 /* Frameworks */,
+				66982A0624C875E6006C2B19 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = IconfontPreview;
-			productName = IconfontPreview;
-			productReference = 66B2F8F61E20C9B5001FB418 /* IconfontPreview.app */;
+			name = "IconfontPreview (iOS)";
+			packageProductDependencies = (
+				666192792512249A0021F6D8 /* Then */,
+			);
+			productName = "IconfontPreview (iOS)";
+			productReference = 66982A0824C875E6006C2B19 /* IconfontPreview.app */;
+			productType = "com.apple.product-type.application";
+		};
+		66982A0F24C875E6006C2B19 /* IconfontPreview (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66982A2124C875E6006C2B19 /* Build configuration list for PBXNativeTarget "IconfontPreview (macOS)" */;
+			buildPhases = (
+				66982A0C24C875E6006C2B19 /* Sources */,
+				66982A0D24C875E6006C2B19 /* Frameworks */,
+				66982A0E24C875E6006C2B19 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "IconfontPreview (macOS)";
+			productName = "IconfontPreview (macOS)";
+			productReference = 66982A1024C875E6006C2B19 /* IconfontPreview.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		66B2F8EE1E20C9B5001FB418 /* Project object */ = {
+		669829FB24C875E5006C2B19 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 1020;
-				ORGANIZATIONNAME = wenyou;
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
 				TargetAttributes = {
-					66B2F8F51E20C9B5001FB418 = {
-						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = CY25956VB2;
-						LastSwiftMigration = 0900;
-						ProvisioningStyle = Automatic;
-						SystemCapabilities = {
-							com.apple.Sandbox = {
-								enabled = 1;
-							};
-						};
+					66982A0724C875E6006C2B19 = {
+						CreatedOnToolsVersion = 12.0;
+					};
+					66982A0F24C875E6006C2B19 = {
+						CreatedOnToolsVersion = 12.0;
 					};
 				};
 			};
-			buildConfigurationList = 66B2F8F11E20C9B5001FB418 /* Build configuration list for PBXProject "IconfontPreview" */;
-			compatibilityVersion = "Xcode 3.2";
+			buildConfigurationList = 669829FE24C875E5006C2B19 /* Build configuration list for PBXProject "IconfontPreview" */;
+			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 66B2F8ED1E20C9B5001FB418;
-			productRefGroup = 66B2F8F71E20C9B5001FB418 /* Products */;
+			mainGroup = 669829FA24C875E5006C2B19;
+			packageReferences = (
+				666192782512249A0021F6D8 /* XCRemoteSwiftPackageReference "Then" */,
+			);
+			productRefGroup = 66982A0924C875E6006C2B19 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				66B2F8F51E20C9B5001FB418 /* IconfontPreview */,
+				66982A0724C875E6006C2B19 /* IconfontPreview (iOS) */,
+				66982A0F24C875E6006C2B19 /* IconfontPreview (macOS) */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		66B2F8F41E20C9B5001FB418 /* Resources */ = {
+		66982A0624C875E6006C2B19 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66B2F8FC1E20C9B5001FB418 /* Assets.xcassets in Resources */,
+				66982A1A24C875E6006C2B19 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66982A0E24C875E6006C2B19 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66982A1B24C875E6006C2B19 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		5FAF101D25100D8928871CC9 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-IconfontPreview/Pods-IconfontPreview-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/Then/Then.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Then.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IconfontPreview/Pods-IconfontPreview-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FE4515D500765D1E3912085C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-IconfontPreview-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		66B2F8F21E20C9B5001FB418 /* Sources */ = {
+		66982A0424C875E6006C2B19 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66B2F91A1E23F105001FB418 /* CharacterInfo.swift in Sources */,
-				66B2F9071E20CA20001FB418 /* Application.swift in Sources */,
-				66ADE0DF1F054F6900B3BB3B /* DragView.swift in Sources */,
-				66A9A6A81F040F1E00A2F013 /* DocumentController.swift in Sources */,
-				66A9A6AA1F04120A00A2F013 /* TTFDocument.swift in Sources */,
-				30847AB41F001C6100C20AAE /* ShowViewController.swift in Sources */,
-				66B2F8FA1E20C9B5001FB418 /* AppDelegate.swift in Sources */,
-				6653D53D21171F93006D99FE /* WindowController.swift in Sources */,
-				30847AB21EFFB5A700C20AAE /* CharacterSet+Helper.swift in Sources */,
-				666084531F002DC9000D1B9C /* SimpleCollectionViewItem.swift in Sources */,
-				664521E01F00B90A006D9B6D /* FontManager.swift in Sources */,
+				66982A1424C875E6006C2B19 /* IconfontPreviewApp.swift in Sources */,
+				66982A1624C875E6006C2B19 /* IconfontPreviewDocument.swift in Sources */,
+				66C3CD6B251367350008A791 /* UTType+Ext.swift in Sources */,
+				666192852512344C0021F6D8 /* CharacterInfo.swift in Sources */,
+				66C3CD642513670B0008A791 /* Character+Ext.swift in Sources */,
+				6661927E2512333B0021F6D8 /* FontManager.swift in Sources */,
+				6661928A251234850021F6D8 /* CharacterSet+Ext.swift in Sources */,
+				66982A1824C875E6006C2B19 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66982A0C24C875E6006C2B19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66982A1524C875E6006C2B19 /* IconfontPreviewApp.swift in Sources */,
+				66982A1724C875E6006C2B19 /* IconfontPreviewDocument.swift in Sources */,
+				66C3CD6C251367350008A791 /* UTType+Ext.swift in Sources */,
+				666192862512344C0021F6D8 /* CharacterInfo.swift in Sources */,
+				66C3CD652513670B0008A791 /* Character+Ext.swift in Sources */,
+				6661927F2512333B0021F6D8 /* FontManager.swift in Sources */,
+				6661928B251234850021F6D8 /* CharacterSet+Ext.swift in Sources */,
+				66982A1924C875E6006C2B19 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		66B2F9011E20C9B5001FB418 /* Debug */ = {
+		66982A1C24C875E6006C2B19 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -273,18 +274,18 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = CY25956VB2;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -298,26 +299,27 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.16;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE_SPECIFIER = Automatic;
-				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		66B2F9021E20C9B5001FB418 /* Release */ = {
+		66982A1D24C875E6006C2B19 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -333,18 +335,18 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = CY25956VB2;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -352,50 +354,104 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.16;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE_SPECIFIER = Automatic;
-				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
 		};
-		66B2F9041E20C9B5001FB418 /* Debug */ = {
+		66982A1F24C875E6006C2B19 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F70853ABF149999436E4BDBA /* Pods-IconfontPreview.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = IconfontPreview/IconfontPreview.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CY25956VB2;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = win.opencode.IconfontPreview;
+				PRODUCT_NAME = IconfontPreview;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		66982A2024C875E6006C2B19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CY25956VB2;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = win.opencode.IconfontPreview;
+				PRODUCT_NAME = IconfontPreview;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		66982A2224C875E6006C2B19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = CY25956VB2;
-				INFOPLIST_FILE = IconfontPreview/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = win.sourcecode.IconfontPreview;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.16;
+				PRODUCT_BUNDLE_IDENTIFIER = win.opencode.IconfontPreview;
+				PRODUCT_NAME = IconfontPreview;
+				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		66B2F9051E20C9B5001FB418 /* Release */ = {
+		66982A2324C875E6006C2B19 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD8F43741293890A349ECB3B /* Pods-IconfontPreview.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = IconfontPreview/IconfontPreview.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = CY25956VB2;
-				INFOPLIST_FILE = IconfontPreview/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				PRODUCT_BUNDLE_IDENTIFIER = win.sourcecode.IconfontPreview;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.16;
+				PRODUCT_BUNDLE_IDENTIFIER = win.opencode.IconfontPreview;
+				PRODUCT_NAME = IconfontPreview;
+				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -403,25 +459,53 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		66B2F8F11E20C9B5001FB418 /* Build configuration list for PBXProject "IconfontPreview" */ = {
+		669829FE24C875E5006C2B19 /* Build configuration list for PBXProject "IconfontPreview" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				66B2F9011E20C9B5001FB418 /* Debug */,
-				66B2F9021E20C9B5001FB418 /* Release */,
+				66982A1C24C875E6006C2B19 /* Debug */,
+				66982A1D24C875E6006C2B19 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		66B2F9031E20C9B5001FB418 /* Build configuration list for PBXNativeTarget "IconfontPreview" */ = {
+		66982A1E24C875E6006C2B19 /* Build configuration list for PBXNativeTarget "IconfontPreview (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				66B2F9041E20C9B5001FB418 /* Debug */,
-				66B2F9051E20C9B5001FB418 /* Release */,
+				66982A1F24C875E6006C2B19 /* Debug */,
+				66982A2024C875E6006C2B19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		66982A2124C875E6006C2B19 /* Build configuration list for PBXNativeTarget "IconfontPreview (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				66982A2224C875E6006C2B19 /* Debug */,
+				66982A2324C875E6006C2B19 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		666192782512249A0021F6D8 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:devxoul/Then.git";
+			requirement = {
+				kind = exactVersion;
+				version = 2.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		666192792512249A0021F6D8 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 666192782512249A0021F6D8 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 66B2F8EE1E20C9B5001FB418 /* Project object */;
+	rootObject = 669829FB24C875E5006C2B19 /* Project object */;
 }

@@ -13,3 +13,5 @@ struct CharacterInfo {
     var code: String
     var fontName: String
 }
+
+extension CharacterInfo: Hashable {}

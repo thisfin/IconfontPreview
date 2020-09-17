@@ -1,5 +1,5 @@
 //
-//  CharacterSet+Helper.swift
+//  CharacterSet+Ext.swift
 //  IconfontPreview
 //
 //  Created by fin on 2017/6/25.
@@ -19,13 +19,5 @@ extension CharacterSet {
             }
         }
         return result
-    }
-}
-
-extension Character {
-    func unicodeScalarCodePoint() -> UInt32 {
-        let characterString = String(self)
-        let scalars = characterString.unicodeScalars
-        return scalars[scalars.startIndex].value
     }
 }
