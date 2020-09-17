@@ -6,9 +6,8 @@
 //
 
 import Foundation
-#if !os(macOS)
+
 import UniformTypeIdentifiers
-#endif
 
 extension UTType {
     static var ttf: UTType {

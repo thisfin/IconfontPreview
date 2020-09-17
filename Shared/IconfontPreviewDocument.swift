@@ -6,9 +6,7 @@
 //
 
 import SwiftUI
-#if !os(macOS)
 import UniformTypeIdentifiers
-#endif
 
 struct IconfontPreviewDocument: FileDocument {
     var fontManager: FontManager

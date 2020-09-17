@@ -57,8 +57,11 @@ struct FontLabel: View {
             showingSheet = true
         } label: {
             Text(stringValue ?? "")
-        }.actionSheet(isPresented: $showingSheet) {
-            ActionSheet(title: Text(characterInfo.code), message: Text(characterInfo.name), buttons: [.default(Text("woo"))])
-        }
+        }.alert(isPresented: $showingSheet, content: {
+            Alert(title: Text(characterInfo.code), message: Text(characterInfo.name), dismissButton: .default(Text("woo")))
+        })
+//        .actionSheet(isPresented: $showingSheet) {
+//            ActionSheet(title: Text(characterInfo.code), message: Text(characterInfo.name), buttons: [.default(Text("woo"))])
+//        }
     }
 }

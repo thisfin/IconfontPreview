@@ -33,7 +33,7 @@ class FontManager {
 
         // 已经注册过的字体取消注册, 在下面重新注册
         #if os(macOS)
-            let fonts = NSFontManager.shared.availableFonts()
+        let fonts = NSFontManager.shared.availableFonts
         #else
             let fonts = UIFont.familyNames.flatMap { (familyName) -> [String] in
                 UIFont.fontNames(forFamilyName: familyName)
