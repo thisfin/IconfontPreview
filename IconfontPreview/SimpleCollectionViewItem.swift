@@ -33,7 +33,7 @@ class SimpleCollectionViewItem: NSCollectionViewItem {
     }
 
     override func mouseDown(with event: NSEvent) {
-        NSMenu.popUpContextMenu(NSMenu().then {
+        NSMenu.popUpContextMenu(NSMenu().next {
             $0.addItem(withTitle: "copy unicode to pasteboard", action: #selector(SimpleCollectionViewItem.copyClicked(_:)), keyEquivalent: "")
             $0.addItem(withTitle: "copy fontName to pasteboard", action: #selector(SimpleCollectionViewItem.copyClicked1(_:)), keyEquivalent: "")
             $0.addItem(.separator())

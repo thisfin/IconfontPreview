@@ -22,7 +22,7 @@ class ShowViewController: NSViewController {
         view.wantsLayer = true
         view.frame = NSRect(origin: .zero, size: NSMakeSize(800, 600))
 
-        collectionView = NSCollectionView().then {
+        collectionView = NSCollectionView().next {
             $0.collectionViewLayout = NSCollectionViewFlowLayout()
             $0.register(SimpleCollectionViewItem.classForCoder(), forItemWithIdentifier: NSUserInterfaceItemIdentifier(SimpleCollectionViewItem.className()))
             $0.dataSource = self

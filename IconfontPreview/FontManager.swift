@@ -62,7 +62,7 @@ class FontManager {
          */
         // UTF-32
         let uint32s: [UInt32] = characterSet.allCharacters().map { (character) -> UInt32 in
-            return character.unicodeScalarCodePoint()
+            character.unicodeScalarCodePoint()
         }
 //        uint32s.forEach { (uint32) in // 字符遍历 这么写打包后会死循环, 我也不知道为什么
         for i in 0 ..< uint32s.count {
