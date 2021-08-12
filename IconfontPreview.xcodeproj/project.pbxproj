@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,8 +19,8 @@
 		66B2F8FC1E20C9B5001FB418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66B2F8FB1E20C9B5001FB418 /* Assets.xcassets */; };
 		66B2F9071E20CA20001FB418 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B2F9061E20CA20001FB418 /* Application.swift */; };
 		66B2F91A1E23F105001FB418 /* CharacterInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B2F9191E23F105001FB418 /* CharacterInfo.swift */; };
-		66FF6C7525F640D100868960 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66FF6C7425F640D100868960 /* SnapKit.framework */; };
-		66FF6C7625F640D100868960 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 66FF6C7425F640D100868960 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		66C29DC026C537A80020B65D /* SnapKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66C29DBF26C537A80020B65D /* SnapKit.xcframework */; };
+		66C29DC126C537A80020B65D /* SnapKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 66C29DBF26C537A80020B65D /* SnapKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		66FF6C7925F6410000868960 /* Next.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FF6C7825F6410000868960 /* Next.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,7 +31,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				66FF6C7625F640D100868960 /* SnapKit.framework in Embed Frameworks */,
+				66C29DC126C537A80020B65D /* SnapKit.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,8 +53,8 @@
 		66B2F9001E20C9B5001FB418 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66B2F9061E20CA20001FB418 /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		66B2F9191E23F105001FB418 /* CharacterInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterInfo.swift; sourceTree = "<group>"; };
+		66C29DBF26C537A80020B65D /* SnapKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SnapKit.xcframework; path = Carthage/Build/SnapKit.xcframework; sourceTree = "<group>"; };
 		66DB29451E34BC3500ED4C68 /* IconfontPreview.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IconfontPreview.entitlements; sourceTree = "<group>"; };
-		66FF6C7425F640D100868960 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/Mac/SnapKit.framework; sourceTree = "<group>"; };
 		66FF6C7825F6410000868960 /* Next.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Next.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,7 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66FF6C7525F640D100868960 /* SnapKit.framework in Frameworks */,
+				66C29DC026C537A80020B65D /* SnapKit.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,7 +112,7 @@
 		C6B51FD5D8CCED058BCE7EDF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				66FF6C7425F640D100868960 /* SnapKit.framework */,
+				66C29DBF26C537A80020B65D /* SnapKit.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -323,7 +323,8 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE_SPECIFIER = Automatic;
 				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
 		};
@@ -342,7 +343,10 @@
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = IconfontPreview/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MARKETING_VERSION = 2.4;
 				OTHER_LDFLAGS = "$(inherited)";
@@ -369,7 +373,10 @@
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = IconfontPreview/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MARKETING_VERSION = 2.4;
 				OTHER_LDFLAGS = "$(inherited)";
